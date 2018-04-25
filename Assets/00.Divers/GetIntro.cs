@@ -67,7 +67,8 @@ public class GetIntro : MonoBehaviour
      }*/
     private void Start()
     {
-        
+        String stringname="";
+        Debug.Log(stringname.Replace("NEWLINE", "\n"));
 
     }
     void Update()
@@ -80,8 +81,11 @@ public class GetIntro : MonoBehaviour
         string strResponse = string.Empty;
         strResponse = rClient.makeRequest();
         Debug.Log(strResponse);
-        txt.text = strResponse;
+        txt.text = strResponse+"\n NEWLINT";
+       
         Debug.Log("LANG: "+lang);
+        Debug.Log(strResponse);
+
 
         btnFR = btnFR.GetComponent<Button>();
         btnFR.onClick.AddListener(() => ChangeLanguage("fr"));
