@@ -25,23 +25,31 @@ public class GetIntro : MonoBehaviour
     public string lang;
     public Button langFR;
     public Button langEN;
+    private static string auth = "?=w68VJkOD9YzM2x9zqsBv7rQOoskL11KwTSPkrIHn";
     public Text txt;
     WWW www;
     IEnumerator Start()
     {
-        txt.text = "<<Title>>";
-        Firebase firebase = Firebase.CreateNew("seriousgametb.firebaseio.com");
-        firebase.Child("{\"name\": \"taylan\", \"message\": \"Title...\"}", true);
+        string url = "https://seriousgametb.firebaseio.com/" + "Intro/Title.json?auth=w68VJkOD9YzM2x9zqsBv7rQOoskL11KwTSPkrIHn";
+        FirebaseRestClient rClient = new FirebaseRestClient();
+        rClient.endPoint = url;
+        Debug.Log("RestClinet created");
+
+        string strResponse = string.Empty;
+        strResponse = rClient.makeRequest();
+        Debug.Log(strResponse);
+        //txt.text = strResponse;
+
+        Firebase firebase = Firebase.CreateNew("seriousgametb.firebaseio.com"+auth);
         //firebase.Child("score").SetValue("2");
+        
+
         Firebase lastUpdate = firebase.Child("Users");
 
-        //lastUpdate.Delete();
-        lastUpdate.Child("pseudo").SetValue("tay");
+            lastUpdate.Child("pseudo").SetValue("taay");
         lastUpdate.GetValue(FirebaseParam.Empty.OrderByKey().LimitToFirst(1));
-        firebase.Child("scores", true).GetValue(FirebaseParam.Empty.OrderByChild("rating").LimitToFirst(1));
         lastUpdate.GetValue("score=10");
 
-        string url = "https://seriousgametb.firebaseio.com/"+"Intro/Title.json";
         www = new WWW(url);
         yield return www;
         if (www.error == null)
@@ -70,7 +78,7 @@ public class GetIntro : MonoBehaviour
         }
 
     }
-    private void Processjson(string jsonString)
+    public void Processjson(string jsonString)
     {
         JsonData jsonvale = JsonMapper.ToObject(jsonString);
         /*User users;
@@ -85,7 +93,7 @@ public class GetIntro : MonoBehaviour
         intros.title = jsonvale[lang].ToString();
        // intros.texte = jsonvale[lang].ToString();
         Debug.Log(intros.title);
-        txt.text = intros.title;
+        //txt.text = intros.title;
         Update();
 
     }
