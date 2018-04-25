@@ -22,15 +22,57 @@ public class Intro
 
 public class GetIntro : MonoBehaviour
 {
-    public string lang;
-    public Button langFR;
-    public Button langEN;
+    public string lang = "fr";
+    public Button btnFR;
+    public Button btnEN;
+    public Button btnDE;
+    public Button btnIT;
+
     private static string auth = "?=w68VJkOD9YzM2x9zqsBv7rQOoskL11KwTSPkrIHn";
     public Text txt;
     WWW www;
-    IEnumerator Start()
+    string url; // = "https://seriousgametb.firebaseio.com/" + "Intro/Texte/" + lang + ".json?auth=w68VJkOD9YzM2x9zqsBv7rQOoskL11KwTSPkrIHn";
+
+    /* IEnumerator Start()
+     {
+         FirebaseRestClient rClient = new FirebaseRestClient();
+         rClient.endPoint = url;
+         Debug.Log("RestClinet created");
+
+         string strResponse = string.Empty;
+         strResponse = rClient.makeRequest();
+         Debug.Log(strResponse);
+         txt.text = strResponse;
+
+         /*Firebase firebase = Firebase.CreateNew("seriousgametb.firebaseio.com"+auth);
+         //firebase.Child("score").SetValue("2");
+
+
+         Firebase lastUpdate = firebase.Child("Users");
+
+             lastUpdate.Child("pseudo").SetValue("taay");
+         lastUpdate.GetValue(FirebaseParam.Empty.OrderByKey().LimitToFirst(1));
+         lastUpdate.GetValue("score=10");
+
+         www = new WWW(url);
+         yield return www;
+         if (www.error == null)
+         {
+             Processjson(www.text);
+         }
+         else
+         {
+             Debug.Log("ERROR: " + www.error);
+         }
+     }*/
+    private void Start()
     {
-        string url = "https://seriousgametb.firebaseio.com/" + "Intro/Title.json?auth=w68VJkOD9YzM2x9zqsBv7rQOoskL11KwTSPkrIHn";
+        
+
+    }
+    void Update()
+    {
+        url = "https://seriousgametb.firebaseio.com/" + "Intro/Texte/" + lang + ".json?auth=w68VJkOD9YzM2x9zqsBv7rQOoskL11KwTSPkrIHn";
         FirebaseRestClient rClient = new FirebaseRestClient();
         rClient.endPoint = url;
         Debug.Log("RestClinet created");
@@ -38,44 +80,24 @@ public class GetIntro : MonoBehaviour
         string strResponse = string.Empty;
         strResponse = rClient.makeRequest();
         Debug.Log(strResponse);
-        //txt.text = strResponse;
+        txt.text = strResponse;
+        Debug.Log("LANG: "+lang);
 
-        Firebase firebase = Firebase.CreateNew("seriousgametb.firebaseio.com"+auth);
-        //firebase.Child("score").SetValue("2");
-        
+        btnFR = btnFR.GetComponent<Button>();
+        btnFR.onClick.AddListener(() => ChangeLanguage("fr"));
 
-        Firebase lastUpdate = firebase.Child("Users");
+        btnEN = btnEN.GetComponent<Button>();
+        btnEN.onClick.AddListener(() => ChangeLanguage("en"));
 
-            lastUpdate.Child("pseudo").SetValue("taay");
-        lastUpdate.GetValue(FirebaseParam.Empty.OrderByKey().LimitToFirst(1));
-        lastUpdate.GetValue("score=10");
+        btnDE = btnDE.GetComponent<Button>();
+        btnDE.onClick.AddListener(() => ChangeLanguage("de"));
 
-        www = new WWW(url);
-        yield return www;
-        if (www.error == null)
-        {
-            Processjson(www.text);
-        }
-        else
-        {
-            Debug.Log("ERROR: " + www.error);
-        }
+        btnIT = btnIT.GetComponent<Button>();
+        btnIT.onClick.AddListener(() => ChangeLanguage("it"));
     }
-    private void Update()
+    public void ChangeLanguage(string lang)
     {
-        
-    }
-    public void ChangeLanguage()
-    {
-        if (langFR)
-        {
-            lang = "fr";
-            Processjson(www.text);
-        }
-        else if (langEN) {
-            lang = "en";
-            Processjson(www.text);
-        }
+        this.lang = lang;
 
     }
     public void Processjson(string jsonString)
