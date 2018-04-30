@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -6,9 +6,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ChangeScene : MonoBehaviour {
+public class ShowBtn : MonoBehaviour {
 
-    public string sceneName;
     public Button btn;
     static float timer = 5.0f;
 
@@ -30,13 +29,4 @@ public class ChangeScene : MonoBehaviour {
     {
         btn.gameObject.SetActive(true);
     }
-
-    public void ChangeSc(string sceneName)
-    {
-      
-            SceneManager.LoadScene(sceneName);
-        
-    }
-
-
 }

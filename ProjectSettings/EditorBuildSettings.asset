@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/00.ChooseLanguage/00.ChooseLanguage.unity
+    guid: 40d0bdbd4ed167d40b44071fec5f7fdd
+  - enabled: 1
     path: Assets/01.Intro/01.Intro.unity
     guid: 93eeb1cedc4931c4bac6e85e4a634a5b
   - enabled: 1
     path: Assets/02.Menu/02.Menu.unity
     guid: 1b9f3d60fe82925439583d0c971d5951
+  - enabled: 1
+    path: Assets/03.SelectNbrePlayer/03.SelectNbPlayer.unity
+    guid: 979bb655959ba244ca0e53d88647a16d
+  - enabled: 1
+    path: Assets/04.SelectPseudo/04.ChoosePseudos.unity
+    guid: ac47511e94a99f64c87e0c0423c333db
+  - enabled: 1
+    path: Assets/05.LaunchDice/05.LaunchDice.unity
+    guid: a5cd30702e922d846b31efe0a1c740f8
