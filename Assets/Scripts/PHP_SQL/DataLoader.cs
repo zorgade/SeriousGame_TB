@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class DataLoader : MonoBehaviour {
 
-	public string[] items;
+	/*public string[] items;
     public Text txt;
     //string itemsDataString = "";
 
@@ -21,7 +21,7 @@ public class DataLoader : MonoBehaviour {
 		string value = data.Substring(data.IndexOf(index)+index.Length);
 		if(value.Contains("|"))value = value.Remove(value.IndexOf("|"));
 		return value;
-	}
+	}*/
 
 
 }

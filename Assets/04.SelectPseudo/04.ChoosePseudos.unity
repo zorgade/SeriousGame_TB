@@ -1552,6 +1552,7 @@ GameObject:
   - component: {fileID: 1092262791}
   - component: {fileID: 1092262793}
   - component: {fileID: 1092262792}
+  - component: {fileID: 1092262794}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1609,13 +1610,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: next_button
 --- !u!222 &1092262793
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092262790}
+--- !u!114 &1092262794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1092262790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d129a25305a4d7946a90c32bf82f69f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: next_button
 --- !u!1 &1308730490
 GameObject:
   m_ObjectHideFlags: 0

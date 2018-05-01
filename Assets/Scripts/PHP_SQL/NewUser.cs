@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class NewUser : MonoBehaviour {
 
-    string url = "http://localhost:8080/SeriousGame/PostUser.php";
+    /*string url = "http://localhost:8080/SeriousGame/PostUser.php";
     string playName = "Player 1";
     int score = -1;
     int position = 0;
@@ -36,5 +36,5 @@ public class NewUser : MonoBehaviour {
             // show the highscores
             Debug.Log(download.downloadHandler.text);
         }
-    }
+    }*/
 }

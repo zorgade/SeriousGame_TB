@@ -601,7 +601,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 652463635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e895497b39e437441ba4eb44d348c023, type: 3}
   m_Name: 
@@ -816,8 +816,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lang: fr
   users: []
-  txt: {fileID: 1466471737}
-  userTxtUI: {fileID: 1699587093}
+  txt: {fileID: 0}
+  userTxtUI: {fileID: 0}
   btnPlay: {fileID: 1778396529}
   btnPause: {fileID: 546721368}
 --- !u!1 &1038638125
@@ -969,7 +969,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1650805563}
   m_Direction: 2
   m_Value: 0.99999994
-  m_Size: 0.5493671
+  m_Size: 0.54608375
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1308,6 +1308,7 @@ GameObject:
   - component: {fileID: 1466471736}
   - component: {fileID: 1466471738}
   - component: {fileID: 1466471737}
+  - component: {fileID: 1466471739}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1365,49 +1366,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\rLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non vulputate
-    nisi. Fusce vel sodales sem. Fusce tincidunt volutpat ante non bibendum. Nullam
-    ornare eget tortor lacinia suscipit. Morbi at semper risus. Nam accumsan in elit
-    ac feugiat. Donec lobortis dolor vitae arcu aliquam consequat. Nunc et lobortis
-    nulla, eu placerat ipsum. Maecenas interdum ullamcorper risus, eu placerat ligula
-    condimentum id. Suspendisse lacus massa, posuere eget sapien eu, vestibulum tristique
-    nisi. Donec sit amet varius diam. Nullam at diam ultricies ligula sagittis porta
-    a id massa.\r\n\r\nProin in dolor egestas tortor imperdiet porta vitae nec tortor.
-    Donec diam felis, porta et volutpat et, dictum a nisi. Donec iaculis mattis efficitur.
-    Maecenas sollicitudin neque quam, vitae tincidunt neque posuere at. Proin egestas
-    leo turpis, eu faucibus velit pulvinar eget. Quisque id pretium arcu. Donec ut
-    ultrices nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras
-    eget volutpat turpis. Donec odio enim, condimentum quis neque et, viverra luctus
-    augue.\r\n\r\nIn tincidunt pharetra enim at venenatis. Praesent quis dolor non
-    neque sagittis bibendum. Orci varius natoque penatibus et magnis dis parturient
-    montes, nascetur ridiculus mus. In nec pulvinar metus. Duis posuere nisi mauris,
-    aliquet euismod leo dictum ac. Praesent porta bibendum sapien quis placerat. Proin
-    ultricies feugiat mauris et porttitor. Quisque luctus libero arcu, sed sollicitudin
-    tellus tempus fringilla. Vestibulum pretium sem in turpis finibus laoreet. Maecenas
-    sodales lobortis ante, et porta nibh venenatis et. Sed vel mollis enim. Sed bibendum
-    blandit dapibus. Duis in semper nunc.\r\n\r\nCras dignissim nisi orci, quis placerat
-    libero auctor a. Sed placerat dapibus massa, molestie aliquam tortor faucibus
-    quis. Mauris luctus, est a pulvinar lobortis, elit ante rutrum odio, eu euismod
-    dui elit nec urna. Nam et arcu tempus est fermentum fringilla. Vestibulum facilisis
-    velit non tristique ornare. Vestibulum vitae pulvinar elit. Vivamus quis nunc
-    mattis, malesuada ex quis, convallis purus. Orci varius natoque penatibus et magnis
-    dis parturient montes, nascetur ridiculus mus. Curabitur varius augue quis augue
-    consequat, a auctor nibh consequat.\r\n\r\nPellentesque luctus lectus lobortis
-    euismod vulputate. Aliquam erat volutpat. Vivamus odio est, sagittis non libero
-    sed, auctor elementum ligula. Vestibulum interdum blandit erat. Vestibulum ante
-    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer
-    eget bibendum felis, eget vehicula massa. Fusce nunc arcu, efficitur a congue
-    quis, posuere vulputate velit. Vestibulum commodo eu nunc ac pretium. Phasellus
-    eget purus porta, malesuada eros eu, tristique augue. Cras lacinia tellus elit,
-    sit amet tincidunt arcu vestibulum vel. Quisque a lobortis mi, ut ornare eros.
-    Maecenas ut quam enim. Etiam a est maximus, bibendum lorem et, ornare arcu. Fusce
-    blandit augue lectus. "
+  m_Text: 
 --- !u!222 &1466471738
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466471735}
+--- !u!114 &1466471739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1466471735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d129a25305a4d7946a90c32bf82f69f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: intro_text
 --- !u!1 &1563210279
 GameObject:
   m_ObjectHideFlags: 0

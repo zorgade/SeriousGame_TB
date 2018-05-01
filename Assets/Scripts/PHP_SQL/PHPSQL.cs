@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PHPSQL : MonoBehaviour
 {
-
+    /*
     public string[] items;
     string itemsDataString;
     public Text txt;
@@ -16,7 +16,7 @@ public class PHPSQL : MonoBehaviour
      /*void Start()
     {
         StartCoroutine(GetData());
-    }*/
+    }*//*
     IEnumerator Start()
     {
         using (WWW www = new WWW(url))
@@ -39,5 +39,5 @@ public class PHPSQL : MonoBehaviour
         string value = data.Substring(data.IndexOf(index) + index.Length);
         if (value.Contains("|")) value = value.Remove(value.IndexOf("|"));
         return value;
-    }
+    }*/
 }
