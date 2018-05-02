@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Networking;
 
 /*Load all of the loclized text from 00.AC.StreamingAssets->JSON file
      * for deserialize it into a localization data object
@@ -9,8 +10,10 @@ using System.IO;
 public class LocalizationManager : MonoBehaviour
 {
     public static LocalizationManager instance;
-    
-    
+    private string filePath;
+    private string result = "";
+    private string dataAsJson;
+
     /*Dictionary are strings and human readable, != Array (no index manage)
      */
     private Dictionary<string, string> localizedText;
@@ -35,17 +38,47 @@ public class LocalizationManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void LoadLocalizedText(string fileName)
+    IEnumerator GetData(string filePath, string fileName)
+    {
+        if (filePath.Contains("://") || filePath.Contains(":///"))
+        {
+            UnityWebRequest www = UnityWebRequest.Get(filePath);
+            yield return www.SendWebRequest();
+            dataAsJson = www.downloadHandler.text;
+        }
+        else
+        {
+            dataAsJson = File.ReadAllText(filePath);
+
+        }
+    }
+
+    public void LoadFile(string name)
+    {
+        //start coroutine with name of json file
+        StartCoroutine(LoadLocalizedText(name));
+
+    }
+    IEnumerator LoadLocalizedText(string fileName)
     {
         localizedText = new Dictionary<string, string>();
+        filePath = Application.streamingAssetsPath+"/"+fileName;
+        Debug.Log(filePath);
 
-        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
-
-        if (File.Exists(filePath))
+        //If StreamingAsset folder is on the Web
+        if (filePath.Contains("://") || filePath.Contains(":///"))
         {
-            //Read all the JSON file
-            string dataAsJson = File.ReadAllText(filePath);
-            LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
+            UnityWebRequest www = UnityWebRequest.Get(filePath);
+            yield return www.SendWebRequest();
+            dataAsJson = www.downloadHandler.text;
+        }
+        //LocalPath
+        else
+        {
+            dataAsJson = File.ReadAllText(filePath);
+
+        }
+        LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
 
             //Add all items key and value to the dictionnary
             for (int i = 0; i < loadedData.items.Length; i++) 
@@ -54,11 +87,7 @@ public class LocalizationManager : MonoBehaviour
             }
 
             Debug.Log("Data loaded, dictionary contains: " + localizedText.Count + " entries");
-        }
-        else
-        {
-            Debug.LogError("Cannot find file!");
-        }
+        
         //LocalizationManger is ready
         isReady = true;
     }
