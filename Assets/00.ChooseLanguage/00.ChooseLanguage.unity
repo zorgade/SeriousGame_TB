@@ -190,7 +190,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1697954366}
-        m_MethodName: LoadLocalizedText
+        m_MethodName: LoadFile
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -312,7 +312,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1697954366}
-        m_MethodName: LoadLocalizedText
+        m_MethodName: LoadFile
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -644,7 +644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1697954366}
-        m_MethodName: LoadLocalizedText
+        m_MethodName: LoadFile
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1239,7 +1239,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1697954366}
-        m_MethodName: LoadLocalizedText
+        m_MethodName: LoadFile
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

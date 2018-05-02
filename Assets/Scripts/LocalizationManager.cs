@@ -11,7 +11,6 @@ public class LocalizationManager : MonoBehaviour
 {
     public static LocalizationManager instance;
     private string filePath;
-    private string result = "";
     private string dataAsJson;
 
     /*Dictionary are strings and human readable, != Array (no index manage)
@@ -38,21 +37,6 @@ public class LocalizationManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    IEnumerator GetData(string filePath, string fileName)
-    {
-        if (filePath.Contains("://") || filePath.Contains(":///"))
-        {
-            UnityWebRequest www = UnityWebRequest.Get(filePath);
-            yield return www.SendWebRequest();
-            dataAsJson = www.downloadHandler.text;
-        }
-        else
-        {
-            dataAsJson = File.ReadAllText(filePath);
-
-        }
-    }
-
     public void LoadFile(string name)
     {
         //start coroutine with name of json file
@@ -62,10 +46,10 @@ public class LocalizationManager : MonoBehaviour
     IEnumerator LoadLocalizedText(string fileName)
     {
         localizedText = new Dictionary<string, string>();
-        filePath = Application.streamingAssetsPath+"/"+fileName;
+        filePath = Path.Combine(Application.streamingAssetsPath, fileName);
         Debug.Log(filePath);
 
-        //If StreamingAsset folder is on the Web
+        //If StreamingAsset folder is on the Web download file
         if (filePath.Contains("://") || filePath.Contains(":///"))
         {
             UnityWebRequest www = UnityWebRequest.Get(filePath);
