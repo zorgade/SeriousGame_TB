@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/05.LaunchDice/05.LaunchDice.unity
     guid: a5cd30702e922d846b31efe0a1c740f8
+  - enabled: 1
+    path: Assets/06.BoardGame/06.BoardGame.unity
+    guid: b3bd5fc1dad78fe44a9832ce8305e3ed
