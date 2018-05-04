@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1259142172}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d129a25305a4d7946a90c32bf82f69f8, type: 3}
   m_Name: 
@@ -1782,7 +1782,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <Enter your pseudo>
+  m_Text: <Enter pseudo>
 --- !u!222 &1259142176
 CanvasRenderer:
   m_ObjectHideFlags: 0

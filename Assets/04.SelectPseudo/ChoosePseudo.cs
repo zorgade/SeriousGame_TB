@@ -12,10 +12,12 @@ public class ChoosePseudo : MonoBehaviour {
     public Text[] label = new Text[4];
     public Text pseudoTitle;
     public Button nextBtn;
+
     public static int nbrePlayer;
     public static string[] pseudoName;
-    private static bool wwwResult = false;
 
+
+    private static bool wwwResult = false;
     string url = "http://localhost:8080/SeriousGame/PostUser.php";
     int score = -1;
     int position = 0;

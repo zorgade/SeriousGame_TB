@@ -601,6 +601,7 @@ GameObject:
   - component: {fileID: 974566205}
   - component: {fileID: 974566207}
   - component: {fileID: 974566206}
+  - component: {fileID: 974566208}
   m_Layer: 5
   m_Name: SelectPlayerTitle
   m_TagString: Untagged
@@ -658,7 +659,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Select number of player
+  m_Text: '<Select number of player>
 
 '
 --- !u!222 &974566207
@@ -667,6 +668,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 974566204}
+--- !u!114 &974566208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974566204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d129a25305a4d7946a90c32bf82f69f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: nbrePlayer_title
 --- !u!1 &1031599914
 GameObject:
   m_ObjectHideFlags: 0

@@ -1032,7 +1032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1af775db1ecd604b820514d4224a7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt: {fileID: 1466471737}
 --- !u!4 &1131469101
 Transform:
   m_ObjectHideFlags: 0
@@ -1432,6 +1431,7 @@ GameObject:
   - component: {fileID: 1563210280}
   - component: {fileID: 1563210282}
   - component: {fileID: 1563210281}
+  - component: {fileID: 1563210283}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1496,6 +1496,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1563210279}
+--- !u!114 &1563210283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1563210279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d129a25305a4d7946a90c32bf82f69f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: skip_intro_btn
 --- !u!1 &1650805562
 GameObject:
   m_ObjectHideFlags: 0
