@@ -22,8 +22,6 @@ public class ChoosePseudo : MonoBehaviour {
     int score = -1;
     int position = 0;
 
-    string test = "Taylan";
-
     // initialization-
     void Start () {
         nextBtn.gameObject.SetActive(false);
