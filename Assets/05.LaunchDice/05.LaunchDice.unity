@@ -575,6 +575,8 @@ MonoBehaviour:
   forceAmount: 100
   torqueAmount: 100
   forceMode: 1
+  playerTour: {fileID: 1828840174}
+  title: {fileID: 216306190}
 --- !u!1 &195272222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,6 +1674,7 @@ GameObject:
   - component: {fileID: 903994144}
   - component: {fileID: 903994143}
   - component: {fileID: 903994145}
+  - component: {fileID: 903994146}
   m_Layer: 5
   m_Name: GotToBoard
   m_TagString: Untagged
@@ -1716,12 +1719,28 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 903994142}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80ce9811bcd52c541aa48c0c6d268347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nbrePlayer: 0
+  playerTour: {fileID: 1828840174}
+  title: {fileID: 216306190}
+--- !u!114 &903994146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903994142}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5d7c5a2bb919d4699bad897ddf58ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceAmount: 10
+  torqueAmount: 10
+  forceMode: 0
   playerTour: {fileID: 1828840174}
   title: {fileID: 216306190}
 --- !u!1 &957781280

@@ -22,8 +22,6 @@ public class ChoosePseudo : MonoBehaviour {
     int score = -1;
     int position = 0;
 
-    string test = "Taylan";
-
     // initialization-
     void Start () {
         nextBtn.gameObject.SetActive(false);
@@ -110,7 +108,10 @@ public class ChoosePseudo : MonoBehaviour {
             // The score
             form.AddField("score", score);
             form.AddField("position", position);
+            Player[] player = new Player[nbrePlayer];
+            player[i] = new Player(pseudoName[i], score, position);
 
+            Debug.Log(player[i].Pseudo.ToString());
 
 
             // Create a download object
