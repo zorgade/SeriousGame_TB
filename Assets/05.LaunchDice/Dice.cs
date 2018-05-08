@@ -30,21 +30,25 @@ public class Dice : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         diceVelocity = rb.velocity;
-
-        for (int i = 0; i < nbrePlayer; i++)
+        /*if (Input.GetMouseButtonDown(0))
         {
-            playerTour.text = ChoosePseudo.pseudoName[i].ToString();
-            //Souris clique gauche = 0, clique droit=1. milieu=2
-            if (Input.GetMouseButtonDown(0) && !played)
-            {
-                //played = false;
-                Lauch();
-                played = false;
+            //played = false;
+            Lauch();
+        }*/
+            /*for (int i = 0; i < nbrePlayer; i++)
+            {*/
+                //playerTour.text = ChoosePseudo.pseudoName[i].ToString();
+                //Souris clique gauche = 0, clique droit=1. milieu=2
+                if (Input.GetMouseButtonDown(0))// && !played)
+                {
+                    //played = false;
+                    Lauch();
+                    played = false;
 
-            }
+                }
+            //}
+
         }
-
-	}
     void Lauch()
     {
         played = true;

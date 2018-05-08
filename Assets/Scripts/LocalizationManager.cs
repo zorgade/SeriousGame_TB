@@ -50,18 +50,18 @@ public class LocalizationManager : MonoBehaviour
         Debug.Log(filePath);
 
         //If StreamingAsset folder is on the Web download file
-        if (filePath.Contains("://") || filePath.Contains(":///"))
-        {
+      //  if (filePath.Contains("://") || filePath.Contains(":///"))
+        //{
             UnityWebRequest www = UnityWebRequest.Get(filePath);
             yield return www.SendWebRequest();
             dataAsJson = www.downloadHandler.text;
-        }
+       // }
         //LocalPath
-        else
+       /* else
         {
             dataAsJson = File.ReadAllText(filePath);
 
-        }
+        }*/
         LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
 
             //Add all items key and value to the dictionnary

@@ -12,11 +12,11 @@ public class PlayerTour : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        /*
         title.GetComponent<Text>();
         nbrePlayer = ChoosePseudo.nbrePlayer;
         playerTour.text = ChoosePseudo.pseudoName[0].ToString();
-        
+        */
     }
 
     // Update is called once per frame

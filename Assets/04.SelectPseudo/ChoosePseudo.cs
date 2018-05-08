@@ -16,6 +16,10 @@ public class ChoosePseudo : MonoBehaviour {
     public static int nbrePlayer;
     public static string[] pseudoName;
 
+    public InputField ip1;
+    public InputField ip2;
+    public InputField ip3;
+    public InputField ip4;
 
     private static bool wwwResult = false;
     string url = "http://localhost:8080/SeriousGame/PostUser.php";
@@ -24,10 +28,13 @@ public class ChoosePseudo : MonoBehaviour {
 
     // initialization-
     void Start () {
-        nextBtn.gameObject.SetActive(false);
-        nbrePlayer = SelectNbrePlayer.nbrePlayer;
+        nextBtn.GetComponent<Button>();
+        //nextBtn.gameObject.SetActive(true);
+        nextBtn.gameObject.SetActive(true);
         pseudoTitle.GetComponent<Text>();
         pseudoTitle.gameObject.SetActive(true);
+        nbrePlayer = SelectNbrePlayer.nbrePlayer;
+
         Debug.Log(nbrePlayer);
         //Recuperation des champs
         for(int i=0; i< pseudo.Length; i++)
@@ -38,16 +45,19 @@ public class ChoosePseudo : MonoBehaviour {
         //Activation-desactivation des champs selon le nbre d'utilisateur.
         EnableInputField(nbrePlayer);
         pseudoName = new string[nbrePlayer];
+
+
         //StartCoroutine(Test(test));
     }
         // Update is called once per frame
         void Update()
     {
+
         for (int i = 0; i < nbrePlayer; i++)
         {
 
-                string test = pseudo[i].text.ToString();
-                if (string.IsNullOrEmpty(test) || test == " ")
+                string test = pseudo[i].text;
+                if (string.IsNullOrEmpty(test) || test.Equals(" "))
                 {
                 nextBtn.gameObject.SetActive(false);
                 pseudoTitle.gameObject.SetActive(true);
