@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Dice : MonoBehaviour {
+public class Dice : MonoBehaviour
+{
 
     static Rigidbody rb;
     public static Vector3 diceVelocity;
@@ -11,49 +13,71 @@ public class Dice : MonoBehaviour {
     public float torqueAmount = 10.0f;
     public ForceMode forceMode;
     public static int countSpace;
-    static bool played;
 
     public static int nbrePlayer;
-    public Text playerTour;
-    public Text title;
+    public Text playerName;
+    public static int count;
+    Player _player;
+
+    public static int diceNumber = 0;
+    public Button btn;
+    public Text[] score;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
         countSpace = 0;
-        played = false;
-        title.GetComponent<Text>();
         nbrePlayer = ChoosePseudo.nbrePlayer;
+        count = 0;
+        _player = ChoosePseudo.players[count];
+        btn.gameObject.SetActive(false);
+        
+
     }
-	
 
-	// Update is called once per frame
-	void Update () {
-        diceVelocity = rb.velocity;
-        /*if (Input.GetMouseButtonDown(0))
-        {
-            //played = false;
-            Lauch();
-        }*/
-            /*for (int i = 0; i < nbrePlayer; i++)
-            {*/
-                //playerTour.text = ChoosePseudo.pseudoName[i].ToString();
-                //Souris clique gauche = 0, clique droit=1. milieu=2
-                if (Input.GetMouseButtonDown(0))// && !played)
-                {
-                    //played = false;
-                    Lauch();
-                    played = false;
-
-                }
-            //}
-
-        }
-    void Lauch()
+    // Update is called once per frame
+    private void Update()
     {
-        played = true;
+        if (ChoosePseudo.players[nbrePlayer - 1].score <= 0)
+        {
+
+            diceVelocity = rb.velocity;
+            playerName.text = ChoosePseudo.players[count].Pseudo;
+
+            if (Input.GetMouseButtonDown(0) && _player.played == false)
+            {
+                Launch();
+            }
+            if (_player.played == true && diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f)
+            {
+                _player.score = diceNumber;
+                score[count].text = playerName.text +" : "+ ChoosePseudo.players[count].score;
+                Initialize();
+            }
+        }
+    }
+
+    void Initialize()
+    {
+        if (count < nbrePlayer && diceNumber != 0)
+        {
+            diceNumber = 0;
+            if (ChoosePseudo.players[(nbrePlayer - 1)].score > 0)
+            {
+                btn.gameObject.SetActive(true);
+            }
+            count++;
+            _player = ChoosePseudo.players[count];
+            return;
+        }
+
+    }
+    void Launch()
+    {
         countSpace++;
-        DiceNumberText.diceNumber = 0;
+        _player.played = true;
+        diceNumber = 0;
         float dirX = Random.Range(0, 500);
         float dirY = Random.Range(0, 500);
         float dirZ = Random.Range(0, 500);

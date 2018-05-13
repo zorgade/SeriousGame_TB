@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DiceNumberText : MonoBehaviour {
 
-    Text text;
+    /*public Text text;
     public Button btn;
 
     public static int diceNumber;
@@ -27,11 +27,18 @@ public class DiceNumberText : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         text.text = diceNumber.ToString();
-        if (diceNumber > 0)
+        if (ChoosePseudo.players[Dice.count].score != 0)
         {
             text.enabled = true;
-            btn.gameObject.SetActive(true);
         }
+        else
+        {
+            text.enabled = false;
+
+        }
+  
+
+        
         Debug.Log(text.text);
 	}
     public void OnClick(string sceneName)
@@ -39,5 +46,5 @@ public class DiceNumberText : MonoBehaviour {
         
             SceneManager.LoadScene(sceneName);
         
-    }
+    }*/
 }

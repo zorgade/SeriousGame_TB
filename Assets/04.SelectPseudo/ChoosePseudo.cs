@@ -16,15 +16,13 @@ public class ChoosePseudo : MonoBehaviour {
     public static int nbrePlayer;
     public static string[] pseudoName;
 
-    public InputField ip1;
-    public InputField ip2;
-    public InputField ip3;
-    public InputField ip4;
+    public static List<Player> players = new List<Player>();
 
     private static bool wwwResult = false;
-    string url = "http://localhost:8080/SeriousGame/PostUser.php";
+    string url = "http://163.172.150.132/SeriousGame/PostUser.php";
     int score = -1;
     int position = 0;
+    bool played;
 
     // initialization-
     void Start () {
@@ -52,26 +50,25 @@ public class ChoosePseudo : MonoBehaviour {
         // Update is called once per frame
         void Update()
     {
+         for (int i = 0; i < nbrePlayer; i++)
+         {
 
-        for (int i = 0; i < nbrePlayer; i++)
-        {
-
-                string test = pseudo[i].text;
-                if (string.IsNullOrEmpty(test) || test.Equals(" "))
-                {
-                nextBtn.gameObject.SetActive(false);
-                pseudoTitle.gameObject.SetActive(true);
+                 //string test = pseudo[i].text;
+                 if (string.IsNullOrEmpty(pseudo[i].text) || pseudo[i].text.Equals(" "))
+                 {
+                 nextBtn.gameObject.SetActive(false);
+                 pseudoTitle.gameObject.SetActive(true);
 
 
-            }
-            else
-            {
-                nextBtn.gameObject.SetActive(true);
-                pseudoTitle.gameObject.SetActive(false);
+             }
+             else
+             {
+                 nextBtn.gameObject.SetActive(true);
+                 pseudoTitle.gameObject.SetActive(false);
 
-            }
+             }
 
-        }
+         }
     }
 
     //Active les InputFiled
@@ -118,10 +115,10 @@ public class ChoosePseudo : MonoBehaviour {
             // The score
             form.AddField("score", score);
             form.AddField("position", position);
-            Player[] player = new Player[nbrePlayer];
-            player[i] = new Player(pseudoName[i], score, position);
-
-            Debug.Log(player[i].Pseudo.ToString());
+            played = false;
+            Player player = new Player(pseudoName[i], score, position, played);
+            players.Add(player);
+            Debug.Log(pseudoName[i]+score+position+played);
 
 
             // Create a download object
