@@ -964,8 +964,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1650805564}
   m_HandleRect: {fileID: 1650805563}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0.65722144
+  m_Value: 1
+  m_Size: 0.2847777
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1246,8 +1246,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -60.4, y: 51}
-  m_SizeDelta: {x: 109.4, y: 43.3}
+  m_AnchoredPosition: {x: -60, y: 40}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1454699693
 MonoBehaviour:
@@ -1367,8 +1367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000004711076, y: -124.600006}
-  m_SizeDelta: {x: -8.931694, y: 249.20006}
+  m_AnchoredPosition: {x: -0.000004711076, y: -600}
+  m_SizeDelta: {x: -8.931694, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466471737
 MonoBehaviour:
@@ -1391,10 +1391,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1402,7 +1402,44 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis feugiat
+    tortor efficitur diam pharetra laoreet. Sed vel lectus mattis, posuere dolor at,
+    finibus velit. Ut gravida placerat diam ac tempus. Curabitur pretium neque ac
+    odio vestibulum, eget commodo libero gravida. Ut mollis pulvinar magna, at malesuada
+    velit. Nam pellentesque, nulla fermentum egestas congue, diam nisi congue eros,
+    a ultricies diam nulla quis mauris. Orci varius natoque penatibus et magnis dis
+    parturient montes, nascetur ridiculus mus.\r\n\r\nOrci varius natoque penatibus
+    et magnis dis parturient montes, nascetur ridiculus mus. Sed commodo aliquet elit,
+    sit amet ullamcorper eros semper quis. Maecenas sollicitudin auctor ante, sit
+    amet cursus diam sodales at. Proin nec mauris sit amet arcu scelerisque ultricies.
+    Vestibulum nec quam a tellus laoreet iaculis. Nam pulvinar felis sem, eget faucibus
+    diam scelerisque nec. Phasellus ornare laoreet sapien, in suscipit tortor sodales
+    et. Cras consectetur massa id erat viverra euismod. Proin volutpat erat eget lorem
+    vestibulum, eu rutrum arcu convallis. Nulla sed eros luctus, malesuada est in,
+    iaculis diam. Mauris quam lacus, bibendum vitae est sit amet, pharetra consequat
+    nisi. Sed non ultrices lorem, ac interdum tellus. Aenean sed dignissim dui. Cras
+    maximus felis eu felis congue, at iaculis arcu ullamcorper.\r\n\r\nDuis aliquam
+    metus sit amet eros eleifend consectetur. In aliquet quam nec laoreet dignissim.
+    Cras tristique tristique elit, sit amet pellentesque libero accumsan vitae. Cras
+    tincidunt orci non velit vestibulum, non dictum risus placerat. Proin cursus mauris
+    at ipsum tempus venenatis. Duis posuere purus sit amet erat ultrices dapibus.
+    Quisque luctus purus vitae dapibus lacinia. Ut sit amet tincidunt massa. Nulla
+    fringilla nisl id diam scelerisque mollis.\r\n\r\nNunc eu elementum turpis, eu
+    dignissim orci. Integer aliquet tempor tellus, at porttitor ex mollis sed. Fusce
+    pretium in odio id ornare. Praesent sit amet est sit amet ex sollicitudin sodales.
+    Proin interdum mi id faucibus rhoncus. Nulla maximus faucibus ultrices. Aenean
+    eu sem sapien. Donec hendrerit laoreet sapien in eleifend. Quisque ante metus,
+    ultricies cursus interdum et, dignissim eu lacus. Suspendisse volutpat nisi ac
+    massa sollicitudin, sit amet pellentesque diam placerat. Nulla pharetra, magna
+    vitae condimentum pulvinar, justo arcu tempus lorem, sed elementum ligula ante
+    eu ipsum. Integer ac rutrum odio, eu placerat sem. Aliquam vel diam tincidunt,
+    euismod augue vitae, vehicula mauris.\r\n\r\nDonec dui mi, imperdiet sed dictum
+    ut, suscipit sit amet nisi. Ut a aliquet neque. Sed molestie sem lorem, quis fermentum
+    nunc tristique ac. Nullam diam nibh, tempus at metus eget, fringilla accumsan
+    massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+    ac turpis egestas. Nulla a magna tincidunt nisi maximus posuere in at urna. Fusce
+    interdum mollis euismod. Curabitur hendrerit accumsan tincidunt. Fusce quis odio
+    sapien. Nam ut eleifend dui, sed hendrerit felis. Sed quis euismod nisl. "
 --- !u!222 &1466471738
 CanvasRenderer:
   m_ObjectHideFlags: 0

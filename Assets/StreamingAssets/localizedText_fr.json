@@ -1,4 +1,4 @@
-{
+﻿{
     "items": [
         {
             "key": "game_title",
@@ -46,6 +46,10 @@
 		{
 			"key": "launch_die_title",
             "value": "Lancez le dé"
+		},
+		{
+			"key": "enter_pseudo",
+            "value": "Entrez le pseudo"
 		}
 		
 		

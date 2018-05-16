@@ -21,8 +21,14 @@ EditorBuildSettings:
     path: Assets/04.SelectPseudo/04.ChoosePseudos.unity
     guid: ac47511e94a99f64c87e0c0423c333db
   - enabled: 1
-    path: Assets/05.LaunchDice/05.LaunchDice.unity
+    path: Assets/05.Dice/05A.LaunchDice/05A.LaunchDice.unity
     guid: a5cd30702e922d846b31efe0a1c740f8
   - enabled: 1
-    path: Assets/06.BoardGame/06.BoardGame.unity
-    guid: b3bd5fc1dad78fe44a9832ce8305e3ed
+    path: Assets/05.Dice/05B.BoardDiceGame/05B.BoardDice.unity
+    guid: 1c0c933b013ca8b49868d50e3a80e2ae
+  - enabled: 1
+    path: Assets/06.SelectCharacter/06.SelectCharacter.unity
+    guid: e2e417a516a78514cba9d7af1123f85e
+  - enabled: 1
+    path: Assets/07.BoardGame/07.BoardGame.unity
+    guid: de7640110af701545a4e149b9528661d

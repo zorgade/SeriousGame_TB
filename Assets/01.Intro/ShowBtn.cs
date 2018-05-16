@@ -13,7 +13,7 @@ public class ShowBtn : MonoBehaviour {
 
     void Start()
     {
-        btn.gameObject.SetActive(false);
+        //btn.gameObject.SetActive(false);
     }
 
     void Update()
