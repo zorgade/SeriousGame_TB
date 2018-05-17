@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 public class SimpleCharacterControl : MonoBehaviour {
@@ -139,7 +139,7 @@ public class SimpleCharacterControl : MonoBehaviour {
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
 
-        Transform camera = Camera.main.transform;
+        Transform camera = Camera.main.transform;//Camera.current.transform;
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
