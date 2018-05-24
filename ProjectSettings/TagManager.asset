@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - diceBegin
+  - Row
   layers:
   - Default
   - TransparentFX

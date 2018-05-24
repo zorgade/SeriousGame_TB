@@ -12,6 +12,8 @@ public class GameBoardScript : MonoBehaviour
     public static int nbrePlayer;
     public static int count;
 
+    GameObject[] allCase;
+
 
 
 
@@ -27,6 +29,12 @@ public class GameBoardScript : MonoBehaviour
             order[i].text = players[i].Pseudo + " : " + players[i].score;
             Debug.Log(players[i].Pseudo + " : " + players[i].score);
         }
+
+        allCase = GameObject.FindGameObjectsWithTag("Case");
+        allCase.OrderBy(x => x.name);
+
+        allCase[0].GetComponent<Renderer>().material.color = Color.magenta;
+
     }
 
     // Update is called once per frame
