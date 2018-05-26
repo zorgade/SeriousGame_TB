@@ -6,6 +6,7 @@ TagManager:
   tags:
   - diceBegin
   - Row
+  - Case
   layers:
   - Default
   - TransparentFX

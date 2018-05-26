@@ -21,6 +21,7 @@ public class DiceBoardGame : MonoBehaviour
 
     public static int diceNumber = 0;
     public Button btn;
+    private static bool played = true;
 
     // Use this for initialization
     void Start()
@@ -28,17 +29,21 @@ public class DiceBoardGame : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         countSpace = 0;
         btn.gameObject.SetActive(false);
-    
+        played = false;
+
+
     }
     
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))// && _player.played == false)
+        if (Input.GetMouseButtonDown(0) && played == false)// && _player.played == false)
         {
             Launch();
             btn.gameObject.SetActive(true);
+            played = true;
         }
         score.text = diceNumber.ToString();
+        //DontDestroyOnLoad(diceNumber);
     }
 
     void Launch()
