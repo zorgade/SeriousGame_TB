@@ -8,6 +8,8 @@ public class GameBoardScript : MonoBehaviour
 {
 
     public Text[] order;
+    public Text scoreNumber;
+
     List<Player> players = new List<Player>();
     public static int nbrePlayer;
     public static int count;
@@ -16,12 +18,18 @@ public class GameBoardScript : MonoBehaviour
     List<Case> cases;
     
     private int score = 0;
-    private int oldScore;
+    private int oldScore = 0;
+    //private int rndNumber;
     Random rnd = new Random();
     private bool canClick;
     Vector3 newPosition;
 
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+
+    }
     // Use this for initialization
     void Start()
     {
@@ -37,28 +45,32 @@ public class GameBoardScript : MonoBehaviour
 
         allCase = GameObject.FindGameObjectsWithTag("Case");
         allCase = allCase.OrderBy(x => x.name).ToArray();
-        //allCase[1].GetComponent<Renderer>().material.color = Color.magenta;
+        allCase[12].GetComponent<Renderer>().material.color = Color.magenta;
+        allCase[allCase.Length-1].GetComponent<Renderer>().material.color = Color.magenta;
+
 
     }
 
     public void GetScore()
     {
-        var rnd = Random.Range(1,6);
+        var rndNumber = Random.Range(1,6);
+        scoreNumber.text = rndNumber.ToString();
+
         oldScore = score;
-        score = score + rnd; //DiceBoardGame.diceNumber;
-        if(score >= allCase.Length - 1)
+        score = score + rndNumber;
+/*        if(score >= allCase.Length - 1)
         {
             score = allCase.Length - 1;
-        }
+        }*/
         Debug.Log(rnd);
     }
 
     // Update is called once per frame
     void Update()
     {
-        score = DiceBoardGame.diceNumber;
-        allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
+        //score = DiceBoardGame.diceNumber;
         allCase[oldScore].GetComponent<Renderer>().material.color = Color.white;
+        allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
 
        
         //players[0].score = 0;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class PlayerMove : MonoBehaviour
     Vector3 lookAtTarget;
     Quaternion playerRot;
     float rotSpeed = 5;
-    float speed = 2.5f;
+    float speed = 3f;
     bool moving = false;
+    NavMeshAgent agent;
+
 
     //This is Main Camera in the scene
     Camera mainCamera;
@@ -20,6 +23,8 @@ public class PlayerMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+
         //This gets the Main Camera from the scene
         mainCamera = Camera.main;
         //This enables Main Camera
@@ -31,15 +36,17 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CameraAction();
+
         if (Input.GetMouseButton(0))
         {
             SetTargetPosition();
-        }
-        if (moving)
-        {
-            Move();
-            CameraAction();
 
+        }
+        if (!agent.pathPending && !agent.hasPath)
+        {
+
+                moving = false;
         }
     }
     void SetTargetPosition()
@@ -50,12 +57,7 @@ public class PlayerMove : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "Case" && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.magenta)
             {
-                Debug.Log(" I hit tag : " + hit.collider.gameObject.tag);
-                targetPosition = hit.point;
-                lookAtTarget = new Vector3(targetPosition.x - transform.position.x,
-                    transform.position.y,
-                    targetPosition.z - transform.position.z);
-                playerRot = Quaternion.LookRotation(lookAtTarget);
+                agent.destination = hit.point;
                 moving = true;
             }
             else
@@ -63,21 +65,7 @@ public class PlayerMove : MonoBehaviour
                 return;
             }
 
-        }
-    }
-    void Move()
-    {
 
-        transform.rotation = Quaternion.Slerp(transform.rotation,
-                                                playerRot,
-                                                rotSpeed * Time.deltaTime);
-        transform.position = Vector3.MoveTowards(transform.position,
-                                                 targetPosition,
-                                                 speed * Time.deltaTime);
-        //stop moving if on target position
-        if (transform.position == targetPosition)
-        {
-            moving = false;
         }
     }
 
