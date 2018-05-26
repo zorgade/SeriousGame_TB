@@ -32,3 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/07.BoardGame/07.BoardGame.unity
     guid: de7640110af701545a4e149b9528661d
+  - enabled: 1
+    path: Assets/08.Quizz/08A.Persistent.unity
+    guid: cf8d4b22f4fe1b948b81b24d941945d8
+  - enabled: 1
+    path: Assets/08.Quizz/08B.Quizz.unity
+    guid: ad6ff307e776720409c1802c8ae7717a

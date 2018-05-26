@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e606ae0ecf91b44b581d33e2e9b089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 1612034648}
+  playerCamera: {fileID: 1800321191}
 --- !u!1 &262641519
 GameObject:
   m_ObjectHideFlags: 0
@@ -8135,7 +8135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e606ae0ecf91b44b581d33e2e9b089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 1612034648}
+  playerCamera: {fileID: 1363603727}
 --- !u!1 &1674710680
 GameObject:
   m_ObjectHideFlags: 0
@@ -9595,7 +9595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e606ae0ecf91b44b581d33e2e9b089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 1612034648}
+  playerCamera: {fileID: 1230560588}
 --- !u!1 &1988732329
 GameObject:
   m_ObjectHideFlags: 0
