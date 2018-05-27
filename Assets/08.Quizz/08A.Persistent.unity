@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRoundData:
   - name: Round Zero
-    timeLimitSeconds: 30
+    timeLimitSeconds: 10
     pointAddedForCorrectAnswer: 10
     questions:
     - questionText: Are Lion carnivor

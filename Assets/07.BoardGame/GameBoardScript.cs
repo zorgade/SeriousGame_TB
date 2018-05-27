@@ -16,8 +16,8 @@ public class GameBoardScript : MonoBehaviour
 
     public static GameObject[] allCase;
     List<Case> cases;
-    
-    private int score = 0;
+
+    public static int score = 0;
     private int oldScore = 0;
     //private int rndNumber;
     Random rnd = new Random();

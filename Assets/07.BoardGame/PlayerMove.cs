@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -37,19 +38,18 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         CameraAction();
-
         if (Input.GetMouseButton(0))
         {
-            SetTargetPosition();
-
+            StartCoroutine(SetTargetPosition());
         }
+
         if (!agent.pathPending && !agent.hasPath)
         {
-
-                moving = false;
+            GameBoardScript.allCase[GameBoardScript.score].GetComponent<Renderer>().material.color = Color.yellow;
+            moving = false;
         }
     }
-    void SetTargetPosition()
+    IEnumerator SetTargetPosition()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -57,15 +57,15 @@ public class PlayerMove : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "Case" && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.magenta)
             {
-                agent.destination = hit.point;
                 moving = true;
+                agent.destination = hit.point;
+                yield return new WaitForSeconds(5.0f);
+                SceneManager.LoadScene("08A.Persistent");
             }
             else
             {
-                return;
+                yield return null;
             }
-
-
         }
     }
 
@@ -87,6 +87,7 @@ public class PlayerMove : MonoBehaviour
 
             //Enable the Main Camera
             mainCamera.enabled = true;
+
         }
     }
 }
