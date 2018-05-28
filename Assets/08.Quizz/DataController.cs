@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class DataController : MonoBehaviour {
 
     public RoundData[] allRoundData;
-
-	// Use this for initialization
-	void Start ()
+    
+    // Use this for initialization
+    void Start ()
     {
         DontDestroyOnLoad(gameObject);
         SceneManager.LoadScene("08B.Quizz");

@@ -45,7 +45,6 @@ public class PlayerMove : MonoBehaviour
 
         if (!agent.pathPending && !agent.hasPath)
         {
-            GameBoardScript.allCase[GameBoardScript.score].GetComponent<Renderer>().material.color = Color.yellow;
             moving = false;
         }
     }
@@ -59,6 +58,9 @@ public class PlayerMove : MonoBehaviour
             {
                 moving = true;
                 agent.destination = hit.point;
+                GameBoardScript.playerPos = agent.destination;
+
+                Debug.Log(agent.destination);
                 yield return new WaitForSeconds(5.0f);
                 SceneManager.LoadScene("08A.Persistent");
             }

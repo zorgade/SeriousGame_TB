@@ -127,6 +127,7 @@ public class GameController : MonoBehaviour
 
             if (timeRemaining <= 0f)
             {
+                GameBoardScript.score = GameBoardScript.oldScore;
                 EndRound(false);
             }
 
