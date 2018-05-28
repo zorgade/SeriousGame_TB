@@ -18,7 +18,7 @@ public class GameBoardScript : MonoBehaviour
     List<Case> cases;
 
     public static int score = 0;
-    private int oldScore = 0;
+    public static int oldScore = 0;
     //private int rndNumber;
     Random rnd = new Random();
     private bool canClick;
@@ -54,7 +54,6 @@ public class GameBoardScript : MonoBehaviour
     public void GetScore()
     {
         var rndNumber = Random.Range(1,6);
-        scoreNumber.text = rndNumber.ToString();
 
         oldScore = score;
         score = score + rndNumber;
@@ -71,8 +70,9 @@ public class GameBoardScript : MonoBehaviour
         //score = DiceBoardGame.diceNumber;
         allCase[oldScore].GetComponent<Renderer>().material.color = Color.white;
         allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
+        scoreNumber.text = score.ToString();
 
-       
+
         //players[0].score = 0;
         //order[0].text = players[0].Pseudo + " : " + players[0].score;
 

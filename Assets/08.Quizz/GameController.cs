@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
     public Text questionDisplayText;
     public Text scoreDisplayText;
@@ -12,7 +13,9 @@ public class GameController : MonoBehaviour {
     public SimpleObjectPool answerButtonObjectPool;
     public Transform answerButtonParent;
     public GameObject questionDisplay;
-    public GameObject roundEndDisplay;
+    public GameObject roundEndDisplayCorrect;
+    public GameObject roundEndDisplayWrong;
+
 
     private DataController dataController;
     private RoundData currentRoundData;
@@ -32,9 +35,10 @@ public class GameController : MonoBehaviour {
         questionPool = currentRoundData.questions;
         timeRemaining = currentRoundData.timeLimitSeconds;
         UpdateTimeRemainingDisplay();
-
         playerScore = 0;
-        questionIndex = 0;
+
+        var rndQuestion = Random.Range(1, questionPool.Length);
+        questionIndex = rndQuestion;
 
         ShowQuestion();
         isRoundActive = true;
@@ -46,6 +50,7 @@ public class GameController : MonoBehaviour {
         RemoveAnswerButtons();
         QuestionData questionData = questionPool[questionIndex];
         questionDisplayText.text = questionData.questionText;
+
 
         for (int i = 0; i < questionData.answers.Length; i++)
         {
@@ -71,28 +76,35 @@ public class GameController : MonoBehaviour {
     {
         if (isCorrect)
         {
-            playerScore += currentRoundData.pointAddedForCorrectAnswer;
             scoreDisplayText.text = "Score: " + playerScore.ToString();
+            EndRound(true);
+
         }
 
-        if (questionPool.Length > questionIndex + 1)
-        {
-            questionIndex++;
-            ShowQuestion();
-        }
         else
         {
-            EndRound();
+            GameBoardScript.score = GameBoardScript.oldScore;
+            EndRound(false);
         }
 
     }
 
-    public void EndRound()
+    public void EndRound(bool answer)
     {
         isRoundActive = false;
-
         questionDisplay.SetActive(false);
-        roundEndDisplay.SetActive(true);
+
+        if (answer)
+        {
+            roundEndDisplayWrong.SetActive(false);
+            roundEndDisplayCorrect.SetActive(true);
+        }
+        else
+        {
+            roundEndDisplayWrong.SetActive(true);
+            roundEndDisplayCorrect.SetActive(false);
+        }
+
     }
 
     public void ReturnToMenu()
@@ -115,7 +127,7 @@ public class GameController : MonoBehaviour {
 
             if (timeRemaining <= 0f)
             {
-                EndRound();
+                EndRound(false);
             }
 
         }
