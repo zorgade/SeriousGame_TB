@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SelectCharacter : MonoBehaviour {
 
     private GameObject[] characterList;
     private int index = 0;
+    public Text playerName;
+    List<Player> players = new List<Player>();
+
 
     private void Start()
     {
         index = PlayerPrefs.GetInt("CharacterSelected");
         characterList = new GameObject[transform.childCount];
+        //players = ChoosePseudo.players;
 
         //Fill array with character
         for(int i=0; i < transform.childCount; i++)
@@ -29,7 +34,11 @@ public class SelectCharacter : MonoBehaviour {
             characterList[index].SetActive(true);
         }
     }
-    
+    private void Update()
+    {
+        //playerName.text = players[0].Pseudo;
+    }
+
     public void CharacterLeftRight(bool left)
     {
         //Visible false old model

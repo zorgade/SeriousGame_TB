@@ -38,3 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/08.Quizz/08B.Quizz.unity
     guid: ad6ff307e776720409c1802c8ae7717a
+  - enabled: 1
+    path: Assets/10.EndScene/10.End.unity
+    guid: 0b065ec81d8ef444eaf6e6ad75dbf58d

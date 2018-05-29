@@ -133,9 +133,13 @@ public class ChoosePseudo : MonoBehaviour
             }
         }
         //If post success load next screen
-        if (wwwResult)
+        if (wwwResult && nbrePlayers > 1)
         {
             SceneManager.LoadScene("05A.LaunchDice");
+        }
+        else if (wwwResult && nbrePlayers == 1)
+        {
+            SceneManager.LoadScene("06.SelectCharacter");
         }
     }
 }

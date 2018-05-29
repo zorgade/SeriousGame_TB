@@ -52,12 +52,12 @@
             "value": "Entrez un pseudo"
 		},
         {
-            "key": "0",
-            "value": " "
+            "key": "select_character",
+            "value": "Choississez un personnage"
         },
         {
-            "key": "1",
-            "value": " "
+            "key": "order",
+            "value": "Ordre:"
         },
         {
             "key": "2",
