@@ -20,7 +20,14 @@ public class PlayerMove : MonoBehaviour
     Camera mainCamera;
     //This is the second Camera and is assigned in inspector
     public Camera playerCamera;
+    public static GameObject playerObject;
+    public static Vector3 playerPos = new Vector3(3, 0, 3);
 
+    private void Awake()
+    {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+
+    }
     // Use this for initialization
     void Start()
     {
@@ -32,38 +39,65 @@ public class PlayerMove : MonoBehaviour
         mainCamera.enabled = true;
         //Use this to disable secondary Camera
         playerCamera.enabled = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         CameraAction();
+
         if (Input.GetMouseButton(0))
         {
             StartCoroutine(SetTargetPosition());
+
         }
 
-        if (!agent.pathPending && !agent.hasPath)
+        /*if (!agent.pathPending && !agent.hasPath)
         {
+            //CameraAction();
             moving = false;
-        }
+        }*/
+
+        playerObject.gameObject.transform.position = playerPos;
+
     }
+
     IEnumerator SetTargetPosition()
     {
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000))
         {
+            //Player move to the score case
             if (hit.collider.gameObject.tag == "Case" && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.magenta)
             {
                 moving = true;
                 agent.destination = hit.point;
-                GameBoardScript.playerPos = agent.destination;
+                playerPos = hit.transform.position;
 
                 Debug.Log(agent.destination);
-                yield return new WaitForSeconds(5.0f);
+                yield return new WaitForSeconds(2f);
+                moving = false;
+
                 SceneManager.LoadScene("08A.Persistent");
+
             }
+            //If answer is wrong, player must return to the old case
+            else if (hit.collider.gameObject.tag == "Case" && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.black)
+            {
+                moving = true;
+                agent.destination = hit.transform.position;
+                playerPos = agent.destination;
+
+                Debug.Log(agent.destination);
+
+                yield return new WaitForSeconds(2f);
+                moving = false;
+
+            }
+
             else
             {
                 yield return null;
@@ -73,6 +107,7 @@ public class PlayerMove : MonoBehaviour
 
     void CameraAction()
     {
+        //When player move
         if (moving == true)
         {
             //Enable the second Camera
@@ -81,15 +116,15 @@ public class PlayerMove : MonoBehaviour
             //The Main first Camera is disabled
             mainCamera.enabled = false;
         }
-        //Otherwise, if the Main Camera is not enabled, switch back to the Main Camera on a key press
+        //When player don't move
         else if (moving == false)
         {
+
             //Disable the second camera
             playerCamera.enabled = false;
 
             //Enable the Main Camera
             mainCamera.enabled = true;
-
         }
     }
 }

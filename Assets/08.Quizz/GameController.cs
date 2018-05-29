@@ -88,7 +88,10 @@ public class GameController : MonoBehaviour
         }
 
     }
-
+    /*
+     *End round manager, if ansewer is correct: show green display and set oldscore to current score 
+     * else show red display and set score to oldscore to the GameBoardScript public stativ int score and oldScore
+     */
     public void EndRound(bool answer)
     {
         isRoundActive = false;
@@ -98,11 +101,14 @@ public class GameController : MonoBehaviour
         {
             roundEndDisplayWrong.SetActive(false);
             roundEndDisplayCorrect.SetActive(true);
+            GameBoardScript.oldScore = GameBoardScript.score;
+
         }
         else
         {
             roundEndDisplayWrong.SetActive(true);
             roundEndDisplayCorrect.SetActive(false);
+            GameBoardScript.score = GameBoardScript.oldScore;
         }
 
     }
@@ -112,12 +118,17 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("07.BoardGame");
     }
 
+    /*
+     * Show time
+     */
     private void UpdateTimeRemainingDisplay()
     {
         timeRemainingDisplayText.text = "Time: " + Mathf.Round(timeRemaining).ToString();
     }
 
-    // Update is called once per frame
+    /*
+     * If time < 0 -> the player lost the round and set EndRound to false
+     */
     void Update()
     {
         if (isRoundActive)

@@ -16,24 +16,17 @@ public class GameBoardScript : MonoBehaviour
     public static int count;
 
     public static GameObject[] allCase;
-    List<Case> cases;
 
     public static int score = 0;
     public static int oldScore;
-    public static GameObject playerObject;
-    public static Vector3 playerPos = new Vector3(3, 0, 3);
+
     public Text diceScore;
     int random;
 
-    private void Awake()
-    {
-        playerObject = GameObject.FindGameObjectWithTag("Player");
 
-    }
     // Use this for initialization
     void Start()
     {
-        playerObject.gameObject.transform.position = playerPos;
         players = Dice.players;
         nbrePlayer = ChoosePseudo.nbrePlayers;
 
@@ -57,16 +50,14 @@ public class GameBoardScript : MonoBehaviour
 
         allCase = GameObject.FindGameObjectsWithTag("Case");
         allCase = allCase.OrderBy(x => x.name).ToArray();
-        allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
-
-        Debug.Log("Player pos: " + playerPos);
-
+        //allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
     }
 
     public void GetScore()
     {
         var rndNumber = Random.Range(1, 6);
         allCase[score].GetComponent<Renderer>().material.color = Color.white;
+        //allCase[oldScore].GetComponent<Renderer>().material.color = Color.white;
         oldScore = score;
         score = score + rndNumber;
         random = rndNumber;
@@ -76,6 +67,8 @@ public class GameBoardScript : MonoBehaviour
             score = allCase.Length - 1;
         }
         allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
+        allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
+
     }
 
     // Update is called once per frame
@@ -83,6 +76,8 @@ public class GameBoardScript : MonoBehaviour
     {
         diceScore.text = random.ToString();
         scoreNumber.text = score.ToString();
+        allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
+
         if (allCase[allCase.Length-1].GetComponent<Renderer>().material.color == Color.magenta)
         {
             SceneManager.LoadScene("10.End");
