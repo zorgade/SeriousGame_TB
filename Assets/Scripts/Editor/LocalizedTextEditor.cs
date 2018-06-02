@@ -7,7 +7,7 @@ using System.IO;
 public class LocalizedTextEditor : EditorWindow {
 
     public LocalizationData localizationData;
-
+    Vector2 scrollPos;
     [MenuItem ("Windows/Localized Text Editor")]
     static void Init()
     {
@@ -17,7 +17,8 @@ public class LocalizedTextEditor : EditorWindow {
     //Call when focus on GUI not every frame like Update()
     private void OnGUI()
     {
-        if(localizationData != null)
+        scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
+        if (localizationData != null)
         {
             SerializedObject serializedObject = new SerializedObject(this);
             SerializedProperty serializedProperty = serializedObject.FindProperty("localizationData");
@@ -38,6 +39,7 @@ public class LocalizedTextEditor : EditorWindow {
         {
             CreateNewData();
         }
+        EditorGUILayout.EndScrollView();
     }
 
     private void LoadGamedata()

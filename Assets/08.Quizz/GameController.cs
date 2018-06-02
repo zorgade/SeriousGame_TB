@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public Text questionDisplayText;
     public Text scoreDisplayText;
     public Text timeRemainingDisplayText;
+
     public SimpleObjectPool answerButtonObjectPool;
     public Transform answerButtonParent;
     public GameObject questionDisplay;
@@ -38,7 +39,7 @@ public class GameController : MonoBehaviour
         playerScore = 0;
 
         var rndQuestion = Random.Range(1, questionPool.Length);
-        questionIndex = rndQuestion;
+        questionIndex = 9;
 
         ShowQuestion();
         isRoundActive = true;

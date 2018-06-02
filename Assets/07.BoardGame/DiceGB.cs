@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameBoardDice : MonoBehaviour {
+public class DiceGB : MonoBehaviour {
 
     private Sprite[] diceSides;
+    public static int finalSide = 0;
 
     private SpriteRenderer rend;
 
@@ -24,7 +25,6 @@ public class GameBoardDice : MonoBehaviour {
     private IEnumerator RollTheDice()
     {
         int randomDiceSide = 0;
-        int finalSide = 0;
 
        for(int i = 0; i <= 20; i++)
         {
@@ -33,8 +33,9 @@ public class GameBoardDice : MonoBehaviour {
 
             yield return new WaitForSeconds(0.05f);
         }
-        finalSide = randomDiceSide;
-        Debug.Log(randomDiceSide +" -> " + (finalSide+1));
+        finalSide = randomDiceSide + 1;
+        GameBoardScript.GetScore();
+        Debug.Log(randomDiceSide +" -> " + finalSide);
     }
     // Update is called once per frame
     void Update () {

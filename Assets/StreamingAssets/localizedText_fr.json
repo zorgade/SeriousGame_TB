@@ -60,16 +60,16 @@
             "value": "Ordre:"
         },
         {
-            "key": "2",
-            "value": " "
+            "key": "question1",
+            "value": "Es-tu une belle personne?"
         },
         {
-            "key": "3",
-            "value": " "
+            "key": "reponse1",
+            "value": "Oui"
         },
         {
-            "key": "4",
-            "value": " "
+            "key": "reponse2",
+            "value": "Non"
         },
         {
             "key": "5",

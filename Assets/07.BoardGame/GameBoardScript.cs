@@ -21,8 +21,6 @@ public class GameBoardScript : MonoBehaviour
     public static int oldScore = 0;
 
     public Text diceScore;
-    int random;
-
 
     // Use this for initialization
     void Start()
@@ -53,14 +51,14 @@ public class GameBoardScript : MonoBehaviour
         //allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
     }
 
-    public void GetScore()
+    public static void GetScore()
     {
-        var rndNumber = Random.Range(1, 6);
+        //var rndNumber = Random.Range(1, 6);
         allCase[score].GetComponent<Renderer>().material.color = Color.white;
         //allCase[oldScore].GetComponent<Renderer>().material.color = Color.white;
         oldScore = score;
-        score = score + rndNumber;
-        random = rndNumber;
+        score += DiceGB.finalSide;
+        //random = DiceGB.finalSide;
 
         if (score > allCase.Length-1)
         {
@@ -74,7 +72,7 @@ public class GameBoardScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        diceScore.text = random.ToString();
+        diceScore.text = DiceGB.finalSide.ToString();
         scoreNumber.text = score.ToString();
         allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
 
