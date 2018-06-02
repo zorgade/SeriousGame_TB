@@ -14,8 +14,6 @@ public class PlayerMove : MonoBehaviour
     float speed = 3f;
     bool moving = false;
     NavMeshAgent agent;
-
-
     //This is Main Camera in the scene
     Camera mainCamera;
     //This is the second Camera and is assigned in inspector

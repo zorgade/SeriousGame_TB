@@ -353,12 +353,12 @@ MonoBehaviour:
         isCorrect: 1
       - answerText: G
         isCorrect: 0
-    - questionText: question1
+    - questionText: Question G
       answers:
       - answerText: G
         isCorrect: 1
       - answerText: H
-        isCorrect: 1
+        isCorrect: 0
 --- !u!4 &2032170542
 Transform:
   m_ObjectHideFlags: 0

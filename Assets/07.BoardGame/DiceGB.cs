@@ -7,18 +7,21 @@ public class DiceGB : MonoBehaviour {
 
     private Sprite[] diceSides;
     public static int finalSide = 0;
+    public Collider dieCollider;
 
     private SpriteRenderer rend;
 
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<SpriteRenderer>();
-
+        dieCollider = this.GetComponent<Collider>();
         diceSides = Resources.LoadAll<Sprite>("DiceSides/");
     }
 
     private void OnMouseDown()
     {
+        dieCollider.enabled = !dieCollider.enabled;
+
         StartCoroutine("RollTheDice");
     }
 

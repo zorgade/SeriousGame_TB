@@ -1765,7 +1765,7 @@ GameObject:
   - component: {fileID: 385709540}
   m_Layer: 0
   m_Name: Dice
-  m_TagString: Untagged
+  m_TagString: Die
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1800,6 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3f34bfbe6faf842bf14e52dbac0eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dieCollider: {fileID: 0}
 --- !u!222 &385709542
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6273,6 +6274,10 @@ Prefab:
         type: 2}
       propertyPath: m_LocalScale.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424814293215384, guid: 6e84e3c48754cd64ab8e8bf65c2c0048, type: 2}
+      propertyPath: m_TagString
+      value: Die
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
