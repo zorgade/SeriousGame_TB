@@ -18,7 +18,7 @@ public class GameBoardScript : MonoBehaviour
     public static GameObject[] allCase;
 
     public static int score = 0;
-    public static int oldScore;
+    public static int oldScore = 0;
 
     public Text diceScore;
     int random;
