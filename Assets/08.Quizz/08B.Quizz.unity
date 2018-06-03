@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -769,7 +769,6 @@ GameObject:
   - component: {fileID: 1009803531}
   - component: {fileID: 1009803533}
   - component: {fileID: 1009803532}
-  - component: {fileID: 1009803534}
   m_Layer: 5
   m_Name: QuestionDisplay
   m_TagString: Untagged
@@ -834,18 +833,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009803530}
---- !u!114 &1009803534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1009803530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d129a25305a4d7946a90c32bf82f69f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: question1
 --- !u!1 &1036964100
 GameObject:
   m_ObjectHideFlags: 0

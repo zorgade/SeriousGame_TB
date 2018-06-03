@@ -37,9 +37,12 @@ public class GameController : MonoBehaviour
         timeRemaining = currentRoundData.timeLimitSeconds;
         UpdateTimeRemainingDisplay();
         playerScore = 0;
-
-        var rndQuestion = Random.Range(1, questionPool.Length);
-        questionIndex = 9;
+        var rndQuestion = 0;
+        for (int i = 0; i < 20; i++)
+        { 
+            rndQuestion = Random.Range(1, questionPool.Length);
+        }
+        questionIndex = rndQuestion;
 
         ShowQuestion();
         isRoundActive = true;
