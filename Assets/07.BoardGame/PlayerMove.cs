@@ -30,6 +30,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
         //This gets the Main Camera from the scene
         mainCamera = Camera.main;
         //This enables Main Camera
@@ -41,6 +42,9 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        playerObject.gameObject.transform.position = playerPos;
+
         CameraAction();
 
         if (Input.GetMouseButton(0))
