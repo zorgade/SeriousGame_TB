@@ -20,7 +20,7 @@ public class DiceGB : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        dieCollider.enabled = !dieCollider.enabled;
+        //dieCollider.enabled = !dieCollider.enabled;
 
         StartCoroutine("RollTheDice");
     }
