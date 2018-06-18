@@ -658,16 +658,16 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Build: 0
-    Collab: 0
+    Build: 1
+    Collab: 1
     ErrorHub: 0
     Hub: 0
-    UNet: 0
+    UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 6fe923f3-2520-4c97-a354-70a2329e1d4a
+  projectName: SeriousGame_TB
+  organizationId: seriousgametb
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
