@@ -8,6 +8,8 @@ TagManager:
   - Row
   - Case
   - Die
+  - Fire
+  - Player1
   layers:
   - Default
   - TransparentFX
