@@ -106,6 +106,8 @@ public class GameController : MonoBehaviour
             roundEndDisplayWrong.SetActive(false);
             roundEndDisplayCorrect.SetActive(true);
             SoloBoardScript.oldScore = SoloBoardScript.score;
+            BManager.oldScore = BManager.score;
+
 
         }
         else
@@ -113,6 +115,10 @@ public class GameController : MonoBehaviour
             roundEndDisplayWrong.SetActive(true);
             roundEndDisplayCorrect.SetActive(false);
             SoloBoardScript.score = SoloBoardScript.oldScore;
+            BManager.score = BManager.oldScore;
+
+
+
         }
 
     }

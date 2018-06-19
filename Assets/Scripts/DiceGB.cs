@@ -41,8 +41,6 @@ public class DiceGB : MonoBehaviour {
         if (SelectNbrePlayer.nbrePlayer != 1)
         {
             BManager.GetScore();
-
-
         }
         else
         {

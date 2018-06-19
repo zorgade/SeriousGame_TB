@@ -12,37 +12,67 @@ public class BManager : NetworkBehaviour
 {
 
     //this will get called when you click on the gameObject
-    [SyncVar]
-    public Color cubeColor;
-    [SyncVar]
-    private GameObject objectID;
+    /* [SyncVar]
+     public Color cubeColor;
+     [SyncVar]
+     private GameObject objectID;
+     private NetworkIdentity objNetId;*/
 
-    private NetworkIdentity objNetId;
-
-    public Text[] order;
-    public Text scoreNumber;
+    //public Text[] order;
     //public static int nbrePlayer;
     //private List<GameObject> allCase;
-    public static GameObject[] allCase;
     //[SyncVar] private SyncList<GameObject> allCase;
-    public static int score = 0;
-    public static int oldScore = 0;//[SyncVar] private int oldScore = 0;
+
     //public Text diceScore;
-    LobbyPlayer lobby;
     //[SyncVar] private Color objectColor;
     //public static int testScore;
+    //LobbyPlayer lobby;
 
+    public Text scoreDisplay;
+    public Text[] playerName;
+
+    public static PlayerPrefs palyerScore;
+
+    public static GameObject[] allCase;
+    public static GameObject[] allRows;
+    public static GameObject map;
+
+    public static int score = 0;
+    public static int oldScore = 0;
+    LobbyPlayer ni;
 
     private void Awake()
     {
-        //allCase = allCase.OrderBy(x => x.name).ToArray();
+        PlayerPrefs.SetInt("playerScore", 0);
+
+        allCase = GameObject.FindGameObjectsWithTag("Case");
+        allCase = allCase.OrderBy(x => x.name).ToArray();
+        foreach (GameObject go in allCase)
+        {
+            DontDestroyOnLoad(go.GetComponent<GameObject>());
+        }
+        /*allRows = GameObject.FindGameObjectsWithTag("Row");
+        allRows = allRows.OrderBy(x => x.name).ToArray();
+        foreach (GameObject go in allRows)
+        {
+            DontDestroyOnLoad(go.GetComponent<GameObject>());
+        }
+        map = GameObject.FindGameObjectWithTag("Map");
+        DontDestroyOnLoad(map);*/
+        DontDestroyOnLoad(gameObject);
+        allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
+
+
     }
     private void Start()
     {
+      
         allCase = GameObject.FindGameObjectsWithTag("Case");
         allCase = allCase.OrderBy(x => x.name).ToArray();
-        allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
-        allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
+        score = PlayerPrefs.GetInt("playerScore");
+        oldScore = PlayerPrefs.GetInt("playerOldScore");
+
+
     }
     void Update()
     {
@@ -52,35 +82,31 @@ public class BManager : NetworkBehaviour
         {
             return;
         }
-        //diceScore.text = DiceGB.finalSide.ToString();
-        //scoreNumber.text = score.ToString();
-        //allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
-
-        /*if (allCase[allCase.Length - 1].GetComponent<Renderer>().material.color == Color.magenta)
+        if (score >= allCase.Length - 1)
         {
+            score = allCase.Length - 1;
             SceneManager.LoadScene("10.End");
-        }*/
+        }
+
     }
     public static void GetScore()
     {
-        //var rndNumber = Random.Range(1, 6);
-        allCase[score].GetComponent<Renderer>().material.color = Color.white;
+        //allCase[score].GetComponent<Renderer>().material.color = Color.white;
         allCase[oldScore].GetComponent<Renderer>().material.color = Color.white;
         oldScore = score;
         score += DiceGB.finalSide;
-        PlayerPrefs.SetInt("score",score);
-        PlayerPrefs.GetInt("oldscore", oldScore);
 
-        //random = DiceGB.finalSide;
+        //Set Player score in PlayerPref
+        PlayerPrefs.SetInt("playerScore", score);
+        PlayerPrefs.SetInt("palyerOldScore", oldScore);
+        Debug.Log(PlayerPrefs.GetInt("playerScore"));
 
-        if (score > allCase.Length - 1)
-        {
-            score = allCase.Length - 1;
-        }
         allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
-        //allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
-
+        allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
+        
     }
+  
+       
     /*       CheckIfClicked();
 
        }

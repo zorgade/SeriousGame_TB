@@ -44,35 +44,38 @@ public class PlayerMove : NetworkBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(SetTargetPosition());
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 1000))
+            {
+                //Player move to the score case
+                if (hit.collider.gameObject.tag == "Case" && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.magenta)
+                {
+                    StartCoroutine(SetTargetPosition(hit.point));
+                }
+                if (hit.collider.gameObject.tag == "Case")// && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.black)
+                {
+                    StartCoroutine(SetTargetOldPosition(hit.point));
+                }
+            }
         }
     }
-    IEnumerator SetTargetPosition()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 1000))
-        {
-            //Player move to the score case
-            if (hit.collider.gameObject.tag == "Case" && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.magenta)
-            {
-                MoveToLocation(hit.point);
-                yield return new WaitForSeconds(2f);
-                SceneManager.LoadScene("08A.Persistent");
-            }
-            //If answer is wrong, player must return to the old case
-            else if (hit.collider.gameObject.tag == "Case")//00    && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.black)
-            {
-                MoveToLocation(hit.point);
-                yield return new WaitForSeconds(2f);
-            }
 
-            else
-            {
-                yield return null;
-            }
-        }
+    IEnumerator SetTargetPosition(Vector3 position)
+    {
+        MoveToLocation(position);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("08A.Persistent", LoadSceneMode.Additive);
     }
+    IEnumerator SetTargetOldPosition(Vector3 position)
+    {
+        MoveToLocation(position);
+        yield return new WaitForSeconds(2f);
+    }
+
+
+
+
     public void MoveToLocation(Vector3 targetPoint)
     {
         playerObject.transform.position = targetPoint;

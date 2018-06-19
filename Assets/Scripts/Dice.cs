@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Dice : MonoBehaviour
+public class Dice : NetworkBehaviour
 {
 
     public static Rigidbody rb;
@@ -25,6 +26,7 @@ public class Dice : MonoBehaviour
     public Button btn;
     public Text[] score;
     public static List<Player> players = new List<Player>();
+    NetworkIdentity lobby;
 
 
     // Use this for initialization
@@ -37,7 +39,7 @@ public class Dice : MonoBehaviour
         count = 0;
         _player = players[count];
         btn.gameObject.SetActive(false);
-        
+        playerName.text = lobby.name;
 
     }
 
