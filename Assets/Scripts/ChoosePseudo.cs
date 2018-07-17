@@ -46,9 +46,9 @@ public class ChoosePseudo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Pseudo controlleur
         for (int i = 0; i < nbrePlayers; i++)
         {
-            //string test = pseudo[i].text;
             if (string.IsNullOrEmpty(pseudo[i].text) || pseudo[i].text.Equals(" "))
             {
 
@@ -69,7 +69,7 @@ public class ChoosePseudo : MonoBehaviour
     {
         Debug.Log("Value " + value);
         //Desactive les InputField
-        DisableInputField(false);
+        DisableInputField();
 
         //Active les InputField - selon value
         for (int i = 0; i < value; i++)
@@ -81,7 +81,7 @@ public class ChoosePseudo : MonoBehaviour
 
     }
     //Desactive les InputFiled
-    private void DisableInputField(bool value)
+    private void DisableInputField()
     {
         for (int i = 0; i < pseudo.Length; i++)
         {
@@ -100,20 +100,21 @@ public class ChoosePseudo : MonoBehaviour
         for (int i = 0; i < nbrePlayers; i++)
         {
             Debug.Log(i);
-            // Create a form object for sending high score data to the server
+            // Create a form object for sending data to the server
             WWWForm form = new WWWForm();
-            // The name of the player submitting the scores
-
+            // The variable of the player submitting
             pseudoName[i] = pseudo[i].text.ToString();
+            //pseudo
             form.AddField("pseudo", pseudoName[i]);
             // The score
             form.AddField("score", score);
+            //position
             form.AddField("position", position);
+            //palyed not send
             played = false;
             Player player = new Player(pseudoName[i], score, position, played);
             players.Add(player);
             Debug.Log(pseudoName[i] + score + position + played);
-
 
             // Create a download object
             var download = UnityWebRequest.Post(url, form);

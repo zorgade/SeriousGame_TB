@@ -288,76 +288,194 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRoundData:
   - name: Round Zero
-    timeLimitSeconds: 10
+    timeLimitSeconds: 30
     pointAddedForCorrectAnswer: 10
     questions:
-    - questionText: Are Lion carnivor
+    - questionText: "A l\u2019horizon 2060, dans quelle direction coulera principalement
+        l\u2019eau de fonte du glacier de la Plaine Morte ?"
       answers:
-      - answerText: Yes
+      - answerText: Au Sud (Valais)
+        isCorrect: 0
+      - answerText: Au Nord (Berne)
         isCorrect: 1
-      - answerText: No
-        isCorrect: 0
-      - answerText: Perhaps
-        isCorrect: 0
-      - answerText: I don't know
-        isCorrect: 0
-    - questionText: Are you beautiful?
+    - questionText: "Le glacier de la Plaine Morte repr\xE9sente une r\xE9serve d\u2019environ
+        0.8 km3 d\u2019eau sous forme de glace. Quelle en est sa superficie ?"
       answers:
-      - answerText: Yes
+      - answerText: 8.4 km2
         isCorrect: 1
-      - answerText: No
+      - answerText: 16.8 km2
         isCorrect: 0
-    - questionText: Is God exist?
+    - questionText: "D\u2019apr\xE8s les \xE9tudes r\xE9centes, quand le glacier de
+        la Plaine Morte aura-t-il disparu ?"
       answers:
-      - answerText: Yes
+      - answerText: "Dans la p\xE9riode 2080 et 2100"
         isCorrect: 1
-      - answerText: No
-        isCorrect: 1
-    - questionText: Question A
-      answers:
-      - answerText: A
-        isCorrect: 1
-      - answerText: B
+      - answerText: "Dans la p\xE9riode 2180 et 2200"
         isCorrect: 0
-      - answerText: C
-        isCorrect: 0
-      - answerText: D
-        isCorrect: 0
-    - questionText: Question B
+    - questionText: "Dans le futur, les lacs au bord du glacier de la Plaine Morte
+        auront tendance \xE0 devenir plus nombreux et plus volumineux. N\xE9cessitent-ils
+        une surveillance ?"
       answers:
-      - answerText: B
+      - answerText: "Oui, \xE0 cause des risques de rupture"
         isCorrect: 1
-      - answerText: A
+      - answerText: "Non, car ils sont \xE9loign\xE9s des activit\xE9s humaines"
         isCorrect: 0
-    - questionText: Question C
+    - questionText: "De nos jours et \xE0 l\u2019avenir, que peut entrainer une ann\xE9e
+        s\xE8che dans la r\xE9gion de Crans-Montana \xE0 Sierre ?"
       answers:
-      - answerText: C
-        isCorrect: 1
-      - answerText: D
+      - answerText: "Un pompage de l\u2019eau du Rh\xF4ne pour l\u2019irrigation des
+          vignes, des jardins et des cultures"
         isCorrect: 0
-    - questionText: Question D
-      answers:
-      - answerText: D
+      - answerText: "Des risques de p\xE9nuries d\u2019eau en fin d\u2019\xE9t\xE9
+          et en hiver"
         isCorrect: 1
-      - answerText: A
+    - questionText: "Les changements socio-\xE9conomiques et climatiques ont un impact
+        sur la gestion durable et int\xE9gr\xE9e de l\u2019eau \xE0 l\u2019horizon
+        2080 dans la r\xE9gion de Crans-Montana \xE0 Sierre. Lequel de ces changements
+        est jug\xE9 le plus important d\u2019apr\xE8s les experts ?"
+      answers:
+      - answerText: "Les changements socio-\xE9conomiques"
+        isCorrect: 1
+      - answerText: Les changements climatiques
         isCorrect: 0
-    - questionText: Question E
+    - questionText: "A quel niveau doivent \xEAtre g\xE9r\xE9s les probl\xE8mes li\xE9s
+        \xE0 l\u2019eau du Haut-Plateau ?"
       answers:
-      - answerText: E
-        isCorrect: 1
-      - answerText: V
-        isCorrect: 1
-    - questionText: Question F
-      answers:
-      - answerText: F
-        isCorrect: 1
-      - answerText: G
+      - answerText: Au niveau communal et local
         isCorrect: 0
-    - questionText: Question G
-      answers:
-      - answerText: G
+      - answerText: "Au niveau intercommunal et r\xE9gional"
         isCorrect: 1
-      - answerText: H
+    - questionText: "La consommation en eau potable de Crans-Montana r\xE9gion a vari\xE9
+        entre 7.7 millions de m3 en 2010 et 8.2 millions de m3 en 2011. Quelle est
+        la quantit\xE9 approximative d\u2019eau potable utilis\xE9e pour l\u2019arrosage
+        des pelouses et des jardins ?"
+      answers:
+      - answerText: "3 millions de m3 par ann\xE9e"
+        isCorrect: 0
+      - answerText: "1 million de m3 par ann\xE9e"
+        isCorrect: 1
+    - questionText: "Comment \xE9volueront les quantit\xE9s d\u2019eau disponibles
+        pour la r\xE9gion de Crans-Montana \xE0 Sierre, \xE0 l\u2019horizon 2050 ?"
+      answers:
+      - answerText: "Les quantit\xE9s diminueront"
+        isCorrect: 0
+      - answerText: "Les quantit\xE9s augmenteront"
+        isCorrect: 0
+      - answerText: "Les quantit\xE9s stagneront"
+        isCorrect: 1
+    - questionText: "Dans le futur, la fr\xE9quence des ann\xE9es s\xE8ches devrait-elle
+        augmenter ou diminuer en Valais ?"
+      answers:
+      - answerText: Augmenter
+        isCorrect: 1
+      - answerText: Diminuer
+        isCorrect: 0
+    - questionText: "Quel est le nom du barrage qui se situe entre la commune d\u2019Ayent
+        et d\u2019Icogne ?"
+      answers:
+      - answerText: Le barrage de Zeuzier
+        isCorrect: 1
+      - answerText: Le barrage de Vatseret
+        isCorrect: 0
+    - questionText: "Mis \xE0 part l\u2019hydro\xE9lectricit\xE9, quel peut \xEAtre
+        le r\xF4le des barrages pour une gestion durable l\u2019eau ?"
+      answers:
+      - answerText: "Acc\xE9l\xE9rer l\u2019\xE9vaporation et la chute de pr\xE9cipitations"
+        isCorrect: 0
+      - answerText: "Stocker l\u2019eau et la r\xE9partir en cas de p\xE9nurie"
+        isCorrect: 1
+    - questionText: "Quand est-ce que le volume d\u2019eau disponible pour la r\xE9gion
+        de Crans-Montana est-il le plus important ?"
+      answers:
+      - answerText: En automne
+        isCorrect: 0
+      - answerText: En hiver
+        isCorrect: 0
+      - answerText: Au printemps
+        isCorrect: 0
+      - answerText: "En \xE9t\xE9"
+        isCorrect: 1
+    - questionText: "Au d\xE9but d\u2019\xE9t\xE9, d\u2019o\xF9 provient principalement
+        l\u2019eau des sources du Haut-Plateau ?"
+      answers:
+      - answerText: De la fonte du glacier
+        isCorrect: 0
+      - answerText: De la pluie
+        isCorrect: 0
+      - answerText: De la fonte de la neige
+        isCorrect: 1
+    - questionText: "Les usages repr\xE9sentaient entre 10.5 et 13.6 millions de m3
+        d\u2019eau par ann\xE9e au d\xE9but des ann\xE9es 2010 (sans l\u2019hydro\xE9lectricit\xE9).
+        Quelle est la quantit\xE9 d\u2019eau disponible par ann\xE9e sur le Haut-Plateau
+        ?"
+      answers:
+      - answerText: Lienne-Raspille
+        isCorrect: 1
+      - answerText: "Collab\u2019Eau\u2019ration"
+        isCorrect: 0
+    - questionText: "Par le pass\xE9, qu\u2019ont construit les hommes pour irriguer
+        les cultures ?"
+      answers:
+      - answerText: "Des conduites forc\xE9es"
+        isCorrect: 0
+      - answerText: Des bisses
+        isCorrect: 1
+    - questionText: "La plaine du Rh\xF4ne est connue pour \xEAtre une des r\xE9gions
+        les plus s\xE8ches de Suisse avec des pr\xE9cipitations moyennes annuelles
+        inf\xE9rieures \xE0 700 mm \xE0 Sierre (p\xE9riode 1961-1990, M\xE9t\xE9oSuisse).
+        Est-ce que les pr\xE9cipitations moyennes annuelles varient avec l\u2019altitude
+        ?"
+      answers:
+      - answerText: Oui, elles diminuent
+        isCorrect: 0
+      - answerText: Non
+        isCorrect: 0
+      - answerText: Oui, elles augmentent
+        isCorrect: 1
+    - questionText: "En Valais, qui est charg\xE9 d\u2019assurer l\u2019approvisionnement,
+        l\u2019\xE9vacuation et le traitement des eaux ?"
+      answers:
+      - answerText: Le canton
+        isCorrect: 0
+      - answerText: Les communes
+        isCorrect: 1
+    - questionText: "Le programme national de recherche \xAB Gestion durable de l\u2019eau
+        \xBB (PNR 61) r\xE9unit 16 projets, dont l\u2019un d\u2019entre eux s\u2019est
+        int\xE9ress\xE9 \xE0 la r\xE9gion de Crans-Montana \xE0 Sierre. Comment ce
+        projet s\u2019appelle-t-il ?"
+      answers:
+      - answerText: MontanAqua
+        isCorrect: 1
+      - answerText: Eau Plateau
+        isCorrect: 0
+    - questionText: "L\u2019eau des sources subit-elle des traitements avant d\u2019entrer
+        dans les r\xE9seaux de distribution d\u2019eau potable ?"
+      answers:
+      - answerText: Oui
+        isCorrect: 1
+      - answerText: Non
+        isCorrect: 0
+    - questionText: "Les eaux souterraines, dont l\u2019eau est exploit\xE9e - ou
+        est exploitable - pour l\u2019approvisionnement en eau potable des communes,
+        sont-elles prot\xE9g\xE9es ?"
+      answers:
+      - answerText: "Non, car elles sont naturellement prot\xE9g\xE9es de la surface"
+        isCorrect: 0
+      - answerText: "Oui, pour restreindre l\u2019utilisation du sol."
+        isCorrect: 1
+    - questionText: "Quel type de gestion faut-il privil\xE9gier pour favoriser une
+        gestion int\xE9gr\xE9e de l\u2019eau ?"
+      answers:
+      - answerText: Une gestion par limites administratives
+        isCorrect: 0
+      - answerText: Une gestion par bassin versant
+        isCorrect: 1
+    - questionText: "Comment est-il possible de savoir o\xF9 s\u2019\xE9coule l\u2019eau
+        de fonte d\u2019un glacier ?"
+      answers:
+      - answerText: "A l\u2019aide d\u2019essais de tra\xE7age"
+        isCorrect: 1
+      - answerText: "A l\u2019aide d\u2019une cartographie d\xE9taill\xE9e"
         isCorrect: 0
 --- !u!4 &2032170542
 Transform:

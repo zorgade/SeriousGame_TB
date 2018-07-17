@@ -30,8 +30,8 @@ public class SoloBoardScript : MonoBehaviour
 
         allCase = GameObject.FindGameObjectsWithTag("Case");
         allCase = allCase.OrderBy(x => x.name).ToArray();
-        allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
         allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
+        allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
 
     }
 
@@ -41,7 +41,7 @@ public class SoloBoardScript : MonoBehaviour
         allCase[score].GetComponent<Renderer>().material.color = Color.white;
         allCase[oldScore].GetComponent<Renderer>().material.color = Color.white;
         oldScore = score;
-        score += DiceGB.finalSide;
+        score += SoloDiceGB.finalSide;
         //random = DiceGB.finalSide;
 
         if (score > allCase.Length - 1)
@@ -49,7 +49,7 @@ public class SoloBoardScript : MonoBehaviour
             score = allCase.Length - 1;
         }
         allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
-        //allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
+        allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
 
     }
 
@@ -58,7 +58,7 @@ public class SoloBoardScript : MonoBehaviour
     {
         diceScore.text = DiceGB.finalSide.ToString();
         scoreNumber.text = score.ToString();
-        allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
+        //allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
 
         if (allCase[allCase.Length - 1].GetComponent<Renderer>().material.color == Color.magenta)
         {

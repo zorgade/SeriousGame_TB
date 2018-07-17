@@ -105,17 +105,18 @@ public class GameController : MonoBehaviour
         {
             roundEndDisplayWrong.SetActive(false);
             roundEndDisplayCorrect.SetActive(true);
-            SoloBoardScript.oldScore = SoloBoardScript.score;
-            BManager.oldScore = BManager.score;
 
+            SoloBoardScript.oldScore = SoloBoardScript.score;
+            DiceGB.oldScore = DiceGB.scorePlayer;
 
         }
         else
         {
             roundEndDisplayWrong.SetActive(true);
             roundEndDisplayCorrect.SetActive(false);
+
             SoloBoardScript.score = SoloBoardScript.oldScore;
-            BManager.score = BManager.oldScore;
+            DiceGB.scorePlayer = DiceGB.oldScore;
 
 
 

@@ -87,8 +87,7 @@ public class GameBoardScript : NetworkBehaviour
         {
             SceneManager.LoadScene("10.End");
         }
-    }*/
+    }
 
-
+    */
 }
-

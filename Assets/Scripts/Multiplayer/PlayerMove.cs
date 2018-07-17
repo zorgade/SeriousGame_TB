@@ -31,7 +31,7 @@ public class PlayerMove : NetworkBehaviour
         {
             return;
         }
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this.gameObject);
         playerObject = this.gameObject;
     }
 
@@ -67,14 +67,12 @@ public class PlayerMove : NetworkBehaviour
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("08A.Persistent", LoadSceneMode.Additive);
     }
+
     IEnumerator SetTargetOldPosition(Vector3 position)
     {
         MoveToLocation(position);
         yield return new WaitForSeconds(2f);
     }
-
-
-
 
     public void MoveToLocation(Vector3 targetPoint)
     {
