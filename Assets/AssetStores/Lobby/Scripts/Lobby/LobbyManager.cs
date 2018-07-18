@@ -133,7 +133,7 @@ namespace Prototype.NetworkLobby
 
             if (currentPanel != mainMenuPanel)
             {
-    
+                backButton.gameObject.SetActive(true);
             }
             else
             {

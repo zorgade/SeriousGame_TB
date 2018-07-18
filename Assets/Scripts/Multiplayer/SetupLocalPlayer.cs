@@ -11,10 +11,7 @@ public class SetupLocalPlayer : NetworkBehaviour
     public string pname = "player";
     [SyncVar]
     public Color playerColor = Color.white;
-    /*[SyncVar]
-    public static int score;
-    [SyncVar]
-    public static int oldScore;*/
+
 
     [Command]
     private void CmdChangeName(string newName)

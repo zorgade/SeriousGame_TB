@@ -9,11 +9,11 @@ using UnityEngine.UI;
 public class ShowBtn : MonoBehaviour {
 
     public Button btn;
-    static float timer = 5.0f;
+    static float timer = 3.0f;
 
     void Start()
     {
-        //btn.gameObject.SetActive(false);
+        btn.gameObject.SetActive(false);
     }
 
     void Update()

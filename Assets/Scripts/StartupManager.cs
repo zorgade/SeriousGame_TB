@@ -7,7 +7,7 @@ public class StartupManager : MonoBehaviour {
     // Use this for initialization
     private IEnumerator Start()
     {
-        //Wait for Localizationmanger isReady
+        //Attend que Localizationmanger, fichier Json des langues, est chargé -> isReady
         while (!LocalizationManager.instance.GetIsReady())
         {
             yield return null;

@@ -24,11 +24,8 @@ EditorBuildSettings:
     path: Assets/Scenes/04.ChoosePseudos.unity
     guid: ac47511e94a99f64c87e0c0423c333db
   - enabled: 1
-    path: Assets/Scenes/05A.LaunchDice.unity
+    path: Assets/Scenes/05.LaunchDice.unity
     guid: a5cd30702e922d846b31efe0a1c740f8
-  - enabled: 1
-    path: Assets/Scenes/05B.BoardDice.unity
-    guid: 1c0c933b013ca8b49868d50e3a80e2ae
   - enabled: 1
     path: Assets/Scenes/06.SelectCharacter.unity
     guid: e2e417a516a78514cba9d7af1123f85e
@@ -48,5 +45,5 @@ EditorBuildSettings:
     path: Assets/Scenes/10.End.unity
     guid: 0b065ec81d8ef444eaf6e6ad75dbf58d
   - enabled: 1
-    path: Assets/UITest/Examples/TestableGameScene.unity
+    path: Assets/AssetStores/UITest/Examples/TestableGameScene.unity
     guid: cf4b10a3abc1a406b82c6e856ad8899f

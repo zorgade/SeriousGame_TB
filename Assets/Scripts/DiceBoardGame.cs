@@ -36,14 +36,13 @@ public class DiceBoardGame : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && played == false)// && _player.played == false)
+        if (Input.GetMouseButtonDown(0))//&& played == false)// && _player.played == false)
         {
             Launch();
             btn.gameObject.SetActive(true);
             played = true;
         }
         score.text = diceNumber.ToString();
-        //DontDestroyOnLoad(diceNumber);
     }
 
     void Launch()

@@ -23,8 +23,6 @@ public class SoloDiceGB : MonoBehaviour {
 
     private void OnMouseDown()
     {
-        //dieCollider.enabled = !dieCollider.enabled;
-
         StartCoroutine("RollTheDice");
     }
 

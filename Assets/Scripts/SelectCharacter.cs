@@ -4,38 +4,36 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SelectCharacter : MonoBehaviour {
+public class SelectCharacter : MonoBehaviour
+{
 
     private GameObject[] characterList;
     private int index = 0;
-    public Text playerName;
 
 
     private void Start()
     {
         index = PlayerPrefs.GetInt("CharacterSelected");
+        
         characterList = new GameObject[transform.childCount];
-        //players = ChoosePseudo.players;
 
         //Fill array with character
-        for(int i=0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
             characterList[i] = transform.GetChild(i).gameObject;
+            characterList[i].transform.position = new Vector3(0, 0, 0);
         }
         //Visible off of all character
         foreach (GameObject go in characterList)
         {
             go.SetActive(false);
         }
+        Debug.Log(index);
         //Visible true selected character
         if (characterList[index])
         {
             characterList[index].SetActive(true);
         }
-    }
-    private void Update()
-    {
-        //playerName.text = players[0].Pseudo;
     }
 
     public void CharacterLeftRight(bool left)
@@ -64,7 +62,7 @@ public class SelectCharacter : MonoBehaviour {
 
     public void ConfirmBtn()
     {
-        PlayerPrefs.SetInt("CharacterSelected", index); 
+        PlayerPrefs.SetInt("CharacterSelected", index);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 }

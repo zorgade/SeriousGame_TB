@@ -46,7 +46,20 @@ public class Dice : NetworkBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (players[nbrePlayer - 1].score <= 0)
+        /*
+         * Pour le prototype et pouvoir tester la scène. Pour revenir en arrière, supprimer le code dessous et décommenter ce qui suit ainsi que la ligne dans la méthode void Launch()
+         */
+        if (Input.GetMouseButtonDown(0))// && _player.played == false)
+        {
+            Launch();
+        }
+        if (diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f)
+        {
+            score[count].text = "Test" + " : " + diceNumber;
+            Initialize();
+        }
+
+        /*if (players[nbrePlayer - 1].score <= 0)
         {
             diceVelocity = rb.velocity;
             playerName.text = players[count].Pseudo;
@@ -60,25 +73,6 @@ public class Dice : NetworkBehaviour
                 _player.score = diceNumber;
                 score[count].text = playerName.text +" : "+ players[count].score;
                 Initialize();
-            }
-        }
-        /*else
-        {
-            if(nbrePlayer > 1)
-            {
-                int index = 0;
-
-                foreach (var item in players)
-                {
-                    int[] scoreControl = new int[nbrePlayer];
-                    item.score = scoreControl[index];
-                    index++;
-                    for(int i=0; i <= index; i++)
-                    {
-
-                    }
-                }
-                
             }
         }*/
     }
@@ -103,7 +97,7 @@ public class Dice : NetworkBehaviour
     void Launch()
     {
         countSpace++;
-        _player.played = true;
+        //_player.played = true;
         diceNumber = 0;
         float dirX = Random.Range(0, 500);
         float dirY = Random.Range(0, 500);

@@ -77,8 +77,6 @@ public class ChoosePseudo : MonoBehaviour
             pseudo[i].gameObject.SetActive(true);
             label[i].gameObject.SetActive(true);
         }
-
-
     }
     //Desactive les InputFiled
     public void DisableInputField()
