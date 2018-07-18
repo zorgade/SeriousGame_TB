@@ -9,7 +9,6 @@ public class SelectCharacter : MonoBehaviour {
     private GameObject[] characterList;
     private int index = 0;
     public Text playerName;
-    List<Player> players = new List<Player>();
 
 
     private void Start()

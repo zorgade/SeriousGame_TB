@@ -65,7 +65,7 @@ public class ChoosePseudo : MonoBehaviour
     }
 
     //Active les InputFiled
-    private void EnableInputField(int value)
+    public void EnableInputField(int value)
     {
         Debug.Log("Value " + value);
         //Desactive les InputField
@@ -81,7 +81,7 @@ public class ChoosePseudo : MonoBehaviour
 
     }
     //Desactive les InputFiled
-    private void DisableInputField()
+    public void DisableInputField()
     {
         for (int i = 0; i < pseudo.Length; i++)
         {

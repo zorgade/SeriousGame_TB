@@ -8,8 +8,6 @@ public class GameController : MonoBehaviour
 {
 
     public Text questionDisplayText;
-    public Text scoreDisplayText;
-    public Text timeRemainingDisplayText;
 
     public SimpleObjectPool answerButtonObjectPool;
     public Transform answerButtonParent;
@@ -23,9 +21,7 @@ public class GameController : MonoBehaviour
     private QuestionData[] questionPool;
 
     private bool isRoundActive;
-    private float timeRemaining;
     private int questionIndex;
-    private int playerScore;
     private List<GameObject> answerButtonGameObjects = new List<GameObject>();
 
     // Use this for initialization
@@ -34,19 +30,15 @@ public class GameController : MonoBehaviour
         dataController = FindObjectOfType<DataController>();
         currentRoundData = dataController.GetCurrentRoundData();
         questionPool = currentRoundData.questions;
-        timeRemaining = currentRoundData.timeLimitSeconds;
-        UpdateTimeRemainingDisplay();
-        playerScore = 0;
         var rndQuestion = 0;
         for (int i = 0; i < 20; i++)
         {
-            rndQuestion = Random.Range(1, questionPool.Length);
+            rndQuestion = Random.Range(0, questionPool.Length);
         }
         questionIndex = rndQuestion;
 
         ShowQuestion();
         isRoundActive = true;
-
     }
 
     private void ShowQuestion()
@@ -54,7 +46,6 @@ public class GameController : MonoBehaviour
         RemoveAnswerButtons();
         QuestionData questionData = questionPool[questionIndex];
         questionDisplayText.text = questionData.questionText;
-
 
         for (int i = 0; i < questionData.answers.Length; i++)
         {
@@ -80,17 +71,12 @@ public class GameController : MonoBehaviour
     {
         if (isCorrect)
         {
-            scoreDisplayText.text = "Score: " + playerScore.ToString();
             EndRound(true);
-
         }
-
         else
         {
-            //GameBoardScript.score = GameBoardScript.oldScore;
             EndRound(false);
         }
-
     }
     /*
      *End round manager, if ansewer is correct: show green display and set oldscore to current score 
@@ -117,9 +103,6 @@ public class GameController : MonoBehaviour
 
             SoloBoardScript.score = SoloBoardScript.oldScore;
             DiceGB.scorePlayer = DiceGB.oldScore;
-
-
-
         }
 
     }
@@ -138,33 +121,6 @@ public class GameController : MonoBehaviour
         else
         {
             SceneManager.LoadScene("07Bis.SoloBoard");
-        }
-    }
-
-    /*
-     * Show time
-     */
-    private void UpdateTimeRemainingDisplay()
-    {
-        timeRemainingDisplayText.text = "Time: " + Mathf.Round(timeRemaining).ToString();
-    }
-
-    /*
-     * If time < 0 -> the player lost the round and set EndRound to false
-     */
-    void Update()
-    {
-        if (isRoundActive)
-        {
-            timeRemaining -= Time.deltaTime;
-            UpdateTimeRemainingDisplay();
-
-            if (timeRemaining <= 0f)
-            {
-                SoloBoardScript.score = SoloBoardScript.oldScore;
-                EndRound(false);
-            }
-
         }
     }
 }
