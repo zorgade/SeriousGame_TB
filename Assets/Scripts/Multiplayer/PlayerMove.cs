@@ -19,8 +19,6 @@ public class PlayerMove : NetworkBehaviour
     //This is the second Camera and is assigned in inspector
     public Camera playerCamera;
     */
-    public Transform target;
-    Vector3 destination;
     public static GameObject playerObject;
 
 

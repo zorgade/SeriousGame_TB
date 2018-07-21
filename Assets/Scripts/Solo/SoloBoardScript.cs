@@ -22,14 +22,19 @@ public class SoloBoardScript : MonoBehaviour
 
     public Text diceScore;
 
+    private void Awake()
+    {
+        allCase = GameObject.FindGameObjectsWithTag("Case");
+        allCase = allCase.OrderBy(x => x.name).ToArray();
+    }
     // Use this for initialization
     void Start()
     {
         players = ChoosePseudo.players[0];
         order.text = players.Pseudo;
 
-        allCase = GameObject.FindGameObjectsWithTag("Case");
-        allCase = allCase.OrderBy(x => x.name).ToArray();
+        
+        Debug.Log("CASE "+allCase.Length);
         allCase[score].GetComponent<Renderer>().material.color = Color.magenta;
         allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
 

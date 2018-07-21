@@ -9,7 +9,6 @@ public class SoloDiceGB : MonoBehaviour {
     private Sprite[] diceSides;
     public static int finalSide = 0;
     public Collider dieCollider;
-    private List<GameObject> allCase;
 
     private SpriteRenderer rend;
 
@@ -42,10 +41,5 @@ public class SoloDiceGB : MonoBehaviour {
             SoloBoardScript.GetScore();
         
         Debug.Log(randomDiceSide + " -> " + finalSide);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

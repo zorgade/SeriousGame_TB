@@ -21,14 +21,13 @@ public class SelectCharacter : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             characterList[i] = transform.GetChild(i).gameObject;
-            characterList[i].transform.position = new Vector3(0, 0, 0);
+            //characterList[i].transform.position = new Vector3(0, 0, 0);
         }
         //Visible off of all character
         foreach (GameObject go in characterList)
         {
             go.SetActive(false);
         }
-        Debug.Log(index);
         //Visible true selected character
         if (characterList[index])
         {

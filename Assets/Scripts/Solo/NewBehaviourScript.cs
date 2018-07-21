@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
-public class SoloPlayerMove : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
+    public static GameObject playerObject;
 
-    public GameObject playerObject;
-    public static Vector3 playerPos = new Vector3(3,0,3);
+    // Use this for initialization
+    private void Start()
+    {
+        playerObject = this.gameObject;
+    }
 
     void Update()
     {
-        playerObject.transform.position = playerPos;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -25,8 +27,7 @@ public class SoloPlayerMove : MonoBehaviour
                 {
                     StartCoroutine(SetTargetPosition(hit.point));
                 }
-
-                if (hit.collider.gameObject.tag == "Case" && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.black)
+                if (hit.collider.gameObject.tag == "Case")// && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.black)
                 {
                     StartCoroutine(SetTargetOldPosition(hit.point));
                 }
@@ -49,7 +50,6 @@ public class SoloPlayerMove : MonoBehaviour
 
     public void MoveToLocation(Vector3 targetPoint)
     {
-        playerPos = targetPoint;
+        playerObject.transform.position = targetPoint;
     }
 }
-
