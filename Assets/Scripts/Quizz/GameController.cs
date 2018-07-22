@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
-public class GameController : MonoBehaviour
+public class GameController : NetworkBehaviour
 {
 
     public Text questionDisplayText;
@@ -95,6 +96,8 @@ public class GameController : MonoBehaviour
             SoloBoardScript.oldScore = SoloBoardScript.score;
             DiceGB.oldScore = DiceGB.scorePlayer;
 
+
+
         }
         else
         {
@@ -112,11 +115,9 @@ public class GameController : MonoBehaviour
 
         if (SelectNbrePlayer.nbrePlayer != 1)
         {
-            //SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Additive);
-
-            SceneManager.LoadScene("07.BoardGame");
-            //SceneManager.LoadScene("07Bis.SoloBoard");
-
+            new WaitForSeconds(2f);
+            NetworkManager.singleton.ServerChangeScene("07.BoardGame");
+            //SceneManager.LoadScene("07.BoardGame");
         }
         else
         {

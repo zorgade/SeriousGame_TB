@@ -21,7 +21,11 @@ public class PlayerMove : NetworkBehaviour
     */
     public static GameObject playerObject;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
 
+    }
     // Use this for initialization
     private void Start()
     {
@@ -29,17 +33,12 @@ public class PlayerMove : NetworkBehaviour
         {
             return;
         }
-        DontDestroyOnLoad(this.gameObject);
         playerObject = this.gameObject;
     }
 
     void Update()
     {
         //playerObject.gameObject.transform.position = playerPos;
-        if (!isLocalPlayer)
-        {
-            return;
-        }
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -51,7 +50,7 @@ public class PlayerMove : NetworkBehaviour
                 {
                     StartCoroutine(SetTargetPosition(hit.point));
                 }
-                if (hit.collider.gameObject.tag == "Case")// && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.black)
+                if (hit.collider.gameObject.tag == "Case" && hit.collider.gameObject.GetComponent<Renderer>().material.color == Color.black)
                 {
                     StartCoroutine(SetTargetOldPosition(hit.point));
                 }
@@ -63,7 +62,8 @@ public class PlayerMove : NetworkBehaviour
     {
         MoveToLocation(position);
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("08A.Persistent", LoadSceneMode.Additive);
+        NetworkManager.singleton.ServerChangeScene("08A.Persistent");
+        //SceneManager.LoadScene("08A.Persistent");//, LoadSceneMode.Additive);
     }
 
     IEnumerator SetTargetOldPosition(Vector3 position)

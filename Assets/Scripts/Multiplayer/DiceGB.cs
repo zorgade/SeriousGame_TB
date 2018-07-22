@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class DiceGB : MonoBehaviour
+public class DiceGB : NetworkBehaviour
 {
 
     private Sprite[] diceSides;
@@ -18,7 +19,6 @@ public class DiceGB : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.SetInt("playerScore", scorePlayer);
 
     }
     // Use this for initialization
@@ -32,7 +32,6 @@ public class DiceGB : MonoBehaviour
     private void OnMouseDown()
     {
         //dieCollider.enabled = !dieCollider.enabled;
-
         StartCoroutine("RollTheDice");
     }
 
@@ -48,34 +47,15 @@ public class DiceGB : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
         finalSide = randomDiceSide + 1;
-        if (SelectNbrePlayer.nbrePlayer != 1)
-        {
-            score.text = finalSide.ToString();
-           
-            oldScore = scorePlayer;
-            scorePlayer += finalSide;
-            if (scorePlayer >= BManager.allCase.Length - 1)
-            {
-                scorePlayer = BManager.allCase.Length - 1;
-            }
 
-            PlayerPrefs.SetInt("playerScore", scorePlayer);
-            PlayerPrefs.SetInt("palyerOldScore", oldScore);
-           
-            Debug.Log(BManager.allCase.Length);
 
-            BManager.allCase[scorePlayer].GetComponent<Renderer>().material.color = Color.white;
-            BManager.allCase[oldScore].GetComponent<Renderer>().material.color = Color.white;
+        score.text = finalSide.ToString();
 
-            BManager.allCase[scorePlayer].GetComponent<Renderer>().material.color = Color.magenta;
-            BManager.allCase[oldScore].GetComponent<Renderer>().material.color = Color.black;
-            
+        oldScore = scorePlayer;
+        scorePlayer += finalSide;
 
-        }
-        else
-        {
-            SoloBoardScript.GetScore();
-        }
+        PlayerPrefs.SetInt("playerScore", scorePlayer);
+        PlayerPrefs.SetInt("palyerOldScore", oldScore);
         Debug.Log(randomDiceSide + " -> " + finalSide);
     }
 }

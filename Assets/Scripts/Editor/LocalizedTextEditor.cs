@@ -8,7 +8,7 @@ public class LocalizedTextEditor : EditorWindow {
 
     public LocalizationData localizationData;
     Vector2 scrollPos;
-    [MenuItem ("Windows/Localized Text Editor")]
+    [MenuItem ("Window/Localized Text Editor")]
     static void Init()
     {
         EditorWindow.GetWindow(typeof(LocalizedTextEditor)).Show();

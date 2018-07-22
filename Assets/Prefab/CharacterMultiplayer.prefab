@@ -135,8 +135,6 @@ GameObject:
   - component: {fileID: 114804272552550496}
   - component: {fileID: 114840146144883216}
   - component: {fileID: 114730686947169716}
-  - component: {fileID: 195504300841452484}
-  - component: {fileID: 114703555687523354}
   - component: {fileID: 65445239108842664}
   m_Layer: 0
   m_Name: CharacterMultiplayer
@@ -637,18 +635,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FaceRenderer: {fileID: 137793145651607720}
---- !u!114 &114703555687523354
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1556990532863376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66e5ed727ae6fa44791d2cac9664bba5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerName: []
 --- !u!114 &114730686947169716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -694,7 +680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e606ae0ecf91b44b581d33e2e9b089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!124 &124416384260445662
 Behaviour:
   m_ObjectHideFlags: 1
@@ -758,24 +743,3 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.1828258, y: -0.003151983, z: 0.00084635615}
     m_Extent: {x: 0.5167406, y: 0.61650836, z: 0.4654917}
   m_DirtyAABB: 0
---- !u!195 &195504300841452484
-NavMeshAgent:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1556990532863376}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.00001
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.7261719
-  m_BaseOffset: 0.36308596
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
