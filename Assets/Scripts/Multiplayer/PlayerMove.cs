@@ -63,7 +63,7 @@ public class PlayerMove : NetworkBehaviour
         MoveToLocation(position);
         yield return new WaitForSeconds(2f);
         NetworkManager.singleton.ServerChangeScene("08A.Persistent");
-        //SceneManager.LoadScene("08A.Persistent");//, LoadSceneMode.Additive);
+        //SceneManager.LoadScene("08A.Persistent", LoadSceneMode.Additive);
     }
 
     IEnumerator SetTargetOldPosition(Vector3 position)

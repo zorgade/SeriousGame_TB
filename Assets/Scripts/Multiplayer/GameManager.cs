@@ -27,20 +27,20 @@ public class GameManager : NetworkBehaviour
 
     void Update()
     {
+        if (DiceGB.scorePlayer >= allCase.Length - 1)
+        {
+            DiceGB.scorePlayer = allCase.Length - 1;
+            SceneManager.LoadScene("10.End");
+        }
         allCase[DiceGB.scorePlayer].GetComponent<Renderer>().material.color = Color.magenta;
         allCase[DiceGB.oldScore].GetComponent<Renderer>().material.color = Color.black;
-        if (mScene.name == "07.BoardGame")
+
+       /*if (mScene.name == "07.BoardGame")
         {
             foreach (GameObject go in allCase)
             {
                 go.SetActive(true);
             }
-
-            if (DiceGB.scorePlayer >= allCase.Length - 1)
-            {
-                DiceGB.scorePlayer = allCase.Length - 1;
-                SceneManager.LoadScene("10.End");
-            }
-        }
+        }*/
     }
 }

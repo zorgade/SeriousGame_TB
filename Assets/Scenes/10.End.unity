@@ -263,11 +263,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 56
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -354,6 +354,8 @@ GameObject:
   - component: {fileID: 1112512227}
   - component: {fileID: 1112512226}
   - component: {fileID: 1112512225}
+  - component: {fileID: 1112512229}
+  - component: {fileID: 1112512230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -424,6 +426,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112512229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1112512224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2a2ea4e374d3c4da39a0f88794a71d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1112512230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1112512224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c29c0a056317594f96e3308f2fed30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1134453712
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,8 +615,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -209}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchoredPosition: {x: 36.2, y: -346.5}
+  m_SizeDelta: {x: 954.5, y: 320.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581928385
 MonoBehaviour:
@@ -620,13 +644,22 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Thx
+  m_Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam a aliquam
+    urna, eget hendrerit ligula. Vivamus ut lectus accumsan, aliquam dolor pharetra,
+    malesuada lectus. Phasellus id eros massa. Nunc pharetra fermentum ante eu cursus.
+    In hac habitasse platea dictumst. Sed tempor mattis libero sit amet viverra. Vestibulum
+    at metus id nibh condimentum pretium. Sed tincidunt, sapien tincidunt rutrum convallis,
+    lorem libero faucibus erat, at congue orci odio a sapien. Maecenas eget scelerisque
+    orci. Sed vel finibus ante. Etiam suscipit nec augue imperdiet rhoncus. Nullam
+    non ligula et purus tincidunt volutpat. Donec eget mi tellus. Suspendisse erat
+    justo, ornare in rhoncus at, tincidunt ut diam. Mauris tincidunt mi et velit dignissim,
+    in hendrerit augue imperdiet. Integer at est vel elit dictum feugiat. '
 --- !u!222 &1581928386
 CanvasRenderer:
   m_ObjectHideFlags: 0

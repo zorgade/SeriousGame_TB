@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoloDiceGB : MonoBehaviour {
+public class SoloDiceGB : MonoBehaviour
+{
 
 
     private Sprite[] diceSides;
@@ -22,6 +23,7 @@ public class SoloDiceGB : MonoBehaviour {
 
     private void OnMouseDown()
     {
+        dieCollider.enabled = !dieCollider.enabled;
         StartCoroutine("RollTheDice");
     }
 
@@ -37,9 +39,8 @@ public class SoloDiceGB : MonoBehaviour {
             yield return new WaitForSeconds(0.05f);
         }
         finalSide = randomDiceSide + 1;
-        
-            SoloBoardScript.GetScore();
-        
+        SoloBoardScript.GetScore();
+
         Debug.Log(randomDiceSide + " -> " + finalSide);
     }
 }

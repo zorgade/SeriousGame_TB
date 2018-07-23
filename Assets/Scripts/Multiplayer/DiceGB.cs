@@ -31,7 +31,7 @@ public class DiceGB : NetworkBehaviour
 
     private void OnMouseDown()
     {
-        //dieCollider.enabled = !dieCollider.enabled;
+        dieCollider.enabled = !dieCollider.enabled;
         StartCoroutine("RollTheDice");
     }
 
@@ -41,7 +41,7 @@ public class DiceGB : NetworkBehaviour
 
         for (int i = 0; i <= 20; i++)
         {
-            randomDiceSide = UnityEngine.Random.Range(0, 5);
+            randomDiceSide = UnityEngine.Random.Range(0, 6);
             rend.sprite = diceSides[randomDiceSide];
 
             yield return new WaitForSeconds(0.05f);

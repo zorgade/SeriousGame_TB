@@ -117,7 +117,7 @@ public class GameController : NetworkBehaviour
         {
             new WaitForSeconds(2f);
             NetworkManager.singleton.ServerChangeScene("07.BoardGame");
-            //SceneManager.LoadScene("07.BoardGame");
+            //SceneManager.LoadScene("07.BoardGame", LoadSceneMode.Additive);
         }
         else
         {

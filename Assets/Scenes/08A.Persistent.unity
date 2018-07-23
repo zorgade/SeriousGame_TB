@@ -287,10 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allRoundData:
-  - name: Round Zero
-    timeLimitSeconds: 30
-    pointAddedForCorrectAnswer: 10
-    questions:
+  - questions:
     - questionText: "A l\u2019horizon 2060, dans quelle direction coulera principalement
         l\u2019eau de fonte du glacier de la Plaine Morte ?"
       answers:
