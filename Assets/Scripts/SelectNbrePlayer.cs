@@ -14,21 +14,9 @@ public class SelectNbrePlayer : MonoBehaviour {
     
     public static int nbrePlayer;
 
-
-    // Use this for initialization
-    void Start () {
-
-
-    }
-
-
     public void EnableInputField(int nbPlayer)
     {
         nbrePlayer = nbPlayer;
     }
 
-    // Update is called once per frame
-    void Update () {
-
-    }
 }

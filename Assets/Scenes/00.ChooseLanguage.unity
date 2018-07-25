@@ -458,11 +458,16 @@ Prefab:
     - target: {fileID: 114047381765328600, guid: 93ce831a878967d46a04354bcb34ac34,
         type: 2}
       propertyPath: m_Interactable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1106707022857130, guid: 93ce831a878967d46a04354bcb34ac34, type: 2}
       propertyPath: m_Name
       value: BtnFr
+      objectReference: {fileID: 0}
+    - target: {fileID: 114047381765328600, guid: 93ce831a878967d46a04354bcb34ac34,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93ce831a878967d46a04354bcb34ac34, type: 2}

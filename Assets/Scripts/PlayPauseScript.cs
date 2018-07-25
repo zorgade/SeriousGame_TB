@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GetIntro : MonoBehaviour {
+public class PlayPauseScript : MonoBehaviour {
 
     public Button btnPlay;
     public Button btnPause;
 
-    private void Awake()
+    void Awake()
     {
         btnPlay.gameObject.SetActive(false);
     }
@@ -18,11 +18,13 @@ public class GetIntro : MonoBehaviour {
 
         btnPlay = btnPlay.GetComponent<Button>();
         btnPause = btnPause.GetComponent<Button>();
+        //Show bouton Play, disable Pause
         btnPause.onClick.AddListener(() => PlayPause(0));
+        //Show bouton Pause, disable Play
         btnPlay.onClick.AddListener(() => PlayPause(1));
     }
 
-    private void PlayPause(int mode)
+    void PlayPause(int mode)
     {
         switch (mode)
         {

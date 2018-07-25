@@ -22,14 +22,14 @@ public class SetupLocalPlayer : NetworkBehaviour
 
     private void Start()
     {
-        if (isLocalPlayer)
-        {
+        //if (isLocalPlayer)
+        //{
             Renderer[] rends = GetComponentsInChildren<Renderer>();
             foreach (Renderer r in rends)
             {
                 r.material.color = playerColor;
             }
-        }
+        //}
     }
 
     private void Update()

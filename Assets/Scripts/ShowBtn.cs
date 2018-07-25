@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class ShowBtn : MonoBehaviour {
 
     public Button btn;
-    static float timer = 3.0f;
+    public float timer;
 
     void Start()
     {

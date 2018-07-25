@@ -767,8 +767,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionDisplayText: {fileID: 1009803532}
-  scoreDisplayText: {fileID: 2047549662}
-  timeRemainingDisplayText: {fileID: 1284882032}
   answerButtonObjectPool: {fileID: 306819088}
   answerButtonParent: {fileID: 1036964101}
   questionDisplay: {fileID: 1181823080}

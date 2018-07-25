@@ -13,7 +13,7 @@ public class SelectCharacter : MonoBehaviour
 
     private void Start()
     {
-        index = PlayerPrefs.GetInt("CharacterSelected");
+        index = PlayerPrefs.GetInt("CharacterSelected", 0);
         
         characterList = new GameObject[transform.childCount];
 
@@ -21,7 +21,6 @@ public class SelectCharacter : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             characterList[i] = transform.GetChild(i).gameObject;
-            //characterList[i].transform.position = new Vector3(0, 0, 0);
         }
         //Visible off of all character
         foreach (GameObject go in characterList)

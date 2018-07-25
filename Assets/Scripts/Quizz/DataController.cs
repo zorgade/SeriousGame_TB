@@ -18,9 +18,4 @@ public class DataController : MonoBehaviour {
     {
         return allRoundData[0];
     }
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 }

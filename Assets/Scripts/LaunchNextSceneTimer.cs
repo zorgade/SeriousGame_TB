@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LaunchScene : MonoBehaviour {
+public class LaunchNextSceneTimer : MonoBehaviour {
 
-    public float timer = 10f;
+    public float timer;
     public string sceneName;
 
     public void GoToScene(string sceneName)

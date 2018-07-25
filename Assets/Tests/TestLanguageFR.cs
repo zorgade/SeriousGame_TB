@@ -16,7 +16,7 @@ public class TestLanguage : UITest {
         // Wait until button with given name appears and simulate press event
         yield return Press("BtnFr");
 
-        yield return WaitFor(new ObjectAppeared<GetIntro>());
+        yield return WaitFor(new ObjectAppeared<PlayPauseScript>());
 
         // Wait until Text component with given name appears and assert its value
         yield return AssertLabel("Panel/Lang", "fr");

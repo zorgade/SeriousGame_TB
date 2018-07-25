@@ -34,12 +34,9 @@ public class Dice : NetworkBehaviour
     {
         rb = GetComponent<Rigidbody>();
         countSpace = 0;
-        //nbrePlayer = LobbyPlayerList.;
-        //players = LobbyPlayer.LobbyPlayer();
         count = 0;
         _player = players[count];
         btn.gameObject.SetActive(false);
-        playerName.text = lobby.name;
 
     }
 
@@ -53,10 +50,10 @@ public class Dice : NetworkBehaviour
         {
             Launch();
         }
-        if (diceVelocity.x == 0f && diceVelocity.y == 0f && diceVelocity.z == 0f)
+        if (GetComponent<Rigidbody>().IsSleeping())
         {
-            score[count].text = "Test" + " : " + diceNumber;
-            Initialize();
+            score[count].text = "player" + " : " + diceNumber;
+            //Initialize();
         }
 
         /*if (players[nbrePlayer - 1].score <= 0)
