@@ -13,19 +13,15 @@ public class DiceGB : NetworkBehaviour
     public static int finalSide = 0;
     public Collider dieCollider;
     private SpriteRenderer rend;
-    public Text score;
     public static int scorePlayer = 0;
     public static int oldScore = 0;
 
-    private void Awake()
-    {
-
-    }
     // Use this for initialization
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
         dieCollider = this.GetComponent<Collider>();
+        //chargement image dossier Resources > DiceSides
         diceSides = Resources.LoadAll<Sprite>("DiceSides/");
     }
 
@@ -47,15 +43,9 @@ public class DiceGB : NetworkBehaviour
             yield return new WaitForSeconds(0.05f);
         }
         finalSide = randomDiceSide + 1;
-
-
-        score.text = finalSide.ToString();
-
         oldScore = scorePlayer;
-        scorePlayer += finalSide;
-
-        PlayerPrefs.SetInt("playerScore", scorePlayer);
-        PlayerPrefs.SetInt("palyerOldScore", oldScore);
+        scorePlayer += finalSide;       
+        
         Debug.Log(randomDiceSide + " -> " + finalSide);
     }
 }

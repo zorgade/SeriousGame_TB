@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129a25305a4d7946a90c32bf82f69f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: back_button
+  key: back_to_game
 --- !u!114 &535700184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,7 +1443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d129a25305a4d7946a90c32bf82f69f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: back_button
+  key: back_to_game
 --- !u!114 &1972419323
 MonoBehaviour:
   m_ObjectHideFlags: 0

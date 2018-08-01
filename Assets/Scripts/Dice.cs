@@ -79,7 +79,7 @@ public class Dice : NetworkBehaviour
         if (count < nbrePlayer && diceNumber != 0)
         {
             diceNumber = 0;
-            if (players[(nbrePlayer - 1)].score > 0)
+            if (players[(nbrePlayer - 1)].Score > 0)
             {
                 btn.gameObject.SetActive(true);
                 count = nbrePlayer - 1;

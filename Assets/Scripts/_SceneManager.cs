@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class _SceneManager : MonoBehaviour
@@ -26,6 +27,7 @@ public class _SceneManager : MonoBehaviour
     {
         NetworkManagerGameObject.SetActive(false);
         Destroy(NetworkManagerGameObject);
+        NetworkManager.singleton.StopHost();
         SceneManager.LoadScene("03.SelectNbPlayer"); // SCENE SUIVANTE
 
     }

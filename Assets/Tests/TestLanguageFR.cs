@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 public class TestLanguage : UITest {
 
     [UnityTest]
-    public IEnumerator FRBtnFunctionCorrectly()
+    public IEnumerator Test_FRBtnFunctionGiveFrenchLang()
     {
         yield return LoadScene("00.ChooseLanguage");
 
@@ -21,9 +21,5 @@ public class TestLanguage : UITest {
         // Wait until Text component with given name appears and assert its value
         yield return AssertLabel("Panel/Lang", "fr");
 
-        yield return Press("SkipIntro");
-
-        // Wait until object with given component disappears from the scene
-       // yield return WaitFor(new ObjectDisappeared<_SceneManager>());
     }
 }

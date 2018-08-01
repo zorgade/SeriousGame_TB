@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class SoloDiceGB : MonoBehaviour
 {
-
-
     private Sprite[] diceSides;
     public static int finalSide = 0;
     public Collider dieCollider;
@@ -18,11 +16,13 @@ public class SoloDiceGB : MonoBehaviour
     {
         rend = GetComponent<SpriteRenderer>();
         dieCollider = this.GetComponent<Collider>();
+        //chargement image dossier Resources > DiceSides
         diceSides = Resources.LoadAll<Sprite>("DiceSides/");
     }
 
     private void OnMouseDown()
     {
+        //désactive après un clique
         dieCollider.enabled = !dieCollider.enabled;
         StartCoroutine("RollTheDice");
     }

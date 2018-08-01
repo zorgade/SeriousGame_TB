@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SoloPlayerMove : MonoBehaviour
 {
-
     public GameObject playerObject;
     public static Vector3 playerPos = new Vector3(3,0,3);
 

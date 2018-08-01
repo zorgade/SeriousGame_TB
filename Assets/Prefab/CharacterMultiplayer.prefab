@@ -130,12 +130,12 @@ GameObject:
   - component: {fileID: 4653351436031752}
   - component: {fileID: 95208462606416458}
   - component: {fileID: 114466563377425898}
-  - component: {fileID: 114434733248408760}
+  - component: {fileID: 65445239108842664}
   - component: {fileID: 23604216300700984}
+  - component: {fileID: 114434733248408760}
+  - component: {fileID: 114730686947169716}
   - component: {fileID: 114804272552550496}
   - component: {fileID: 114840146144883216}
-  - component: {fileID: 114730686947169716}
-  - component: {fileID: 65445239108842664}
   m_Layer: 0
   m_Name: CharacterMultiplayer
   m_TagString: Player
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 23390017586263432}
   - component: {fileID: 102905637674041932}
   m_Layer: 0
-  m_Name: New Text
+  m_Name: PlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
