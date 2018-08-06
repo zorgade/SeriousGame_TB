@@ -44,7 +44,7 @@ public class DiceGB : NetworkBehaviour
         }
         finalSide = randomDiceSide + 1;
         oldScore = scorePlayer;
-        scorePlayer += finalSide;       
+        scorePlayer += finalSide;
         
         Debug.Log(randomDiceSide + " -> " + finalSide);
     }
