@@ -55,13 +55,26 @@ public class LocalizationManager : MonoBehaviour
             UnityWebRequest www = UnityWebRequest.Get(filePath);
             yield return www.SendWebRequest();
             dataAsJson = www.downloadHandler.text;
-       // }
-        //LocalPath
-       /* else
-        {
-            dataAsJson = File.ReadAllText(filePath);
+        /*
+         // If StreamingAsset folder is on the Web download file
+         //  if (filePath.Contains("://") || filePath.Contains(":///"))
+         //{
+         UnityWebRequest www = UnityWebRequest.Get(filePath);
+        yield return www.SendWebRequest();
+        //byte[] results = www.downloadHandler.data;
+        //dataAsJson = System.Convert.ToBase64String(results);
+        dataAsJson = Encoding.UTF8.GetString(www.downloadHandler.data);
 
-        }*/
+        Debug.Log(dataAsJson);
+        */
+        // }
+        //LocalPath
+        /* else
+         {
+             dataAsJson = File.ReadAllText(filePath);
+
+         }*/
+        Debug.Log(dataAsJson);
         LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
 
             //Add all items key and value to the dictionnary
